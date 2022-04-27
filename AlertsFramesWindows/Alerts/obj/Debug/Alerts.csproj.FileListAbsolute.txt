@@ -1,0 +1,8 @@
+D:\Learning\Selenium\ToolsQA Submission\AlertsFramesWindows\Alerts\bin\Debug\Alerts.exe.config
+D:\Learning\Selenium\ToolsQA Submission\AlertsFramesWindows\Alerts\bin\Debug\Alerts.exe
+D:\Learning\Selenium\ToolsQA Submission\AlertsFramesWindows\Alerts\bin\Debug\Alerts.pdb
+D:\Learning\Selenium\ToolsQA Submission\AlertsFramesWindows\Alerts\bin\Debug\WebDriver.dll
+D:\Learning\Selenium\ToolsQA Submission\AlertsFramesWindows\Alerts\obj\Debug\Alerts.csproj.CoreCompileInputs.cache
+D:\Learning\Selenium\ToolsQA Submission\AlertsFramesWindows\Alerts\obj\Debug\Alerts.csproj.CopyComplete
+D:\Learning\Selenium\ToolsQA Submission\AlertsFramesWindows\Alerts\obj\Debug\Alerts.exe
+D:\Learning\Selenium\ToolsQA Submission\AlertsFramesWindows\Alerts\obj\Debug\Alerts.pdb

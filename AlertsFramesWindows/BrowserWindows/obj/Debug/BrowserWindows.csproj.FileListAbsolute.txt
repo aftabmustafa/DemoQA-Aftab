@@ -1,0 +1,10 @@
+D:\Learning\Selenium\ToolsQA Submission\AlertsFramesWindows\BrowserWindows\bin\Debug\BrowserWindows.exe.config
+D:\Learning\Selenium\ToolsQA Submission\AlertsFramesWindows\BrowserWindows\bin\Debug\BrowserWindows.exe
+D:\Learning\Selenium\ToolsQA Submission\AlertsFramesWindows\BrowserWindows\bin\Debug\BrowserWindows.pdb
+D:\Learning\Selenium\ToolsQA Submission\AlertsFramesWindows\BrowserWindows\bin\Debug\nunit.framework.dll
+D:\Learning\Selenium\ToolsQA Submission\AlertsFramesWindows\BrowserWindows\bin\Debug\WebDriver.dll
+D:\Learning\Selenium\ToolsQA Submission\AlertsFramesWindows\BrowserWindows\bin\Debug\nunit.framework.xml
+D:\Learning\Selenium\ToolsQA Submission\AlertsFramesWindows\BrowserWindows\obj\Debug\BrowserWindows.csproj.CoreCompileInputs.cache
+D:\Learning\Selenium\ToolsQA Submission\AlertsFramesWindows\BrowserWindows\obj\Debug\BrowserWindows.csproj.CopyComplete
+D:\Learning\Selenium\ToolsQA Submission\AlertsFramesWindows\BrowserWindows\obj\Debug\BrowserWindows.exe
+D:\Learning\Selenium\ToolsQA Submission\AlertsFramesWindows\BrowserWindows\obj\Debug\BrowserWindows.pdb
