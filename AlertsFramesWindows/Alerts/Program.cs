@@ -16,14 +16,14 @@ namespace Alerts
 
             Thread.Sleep(3000);
 
-            //SimpleAlert(Driver);
-            //Thread.Sleep(1000);
+            SimpleAlert(Driver);
+            Thread.Sleep(1000);
 
-            //TimedAlert(Driver);
-            //Thread.Sleep(1000);
+            TimedAlert(Driver);
+            Thread.Sleep(1000);
 
-            //ConfirmAlert(Driver);
-            //Thread.Sleep(1000);
+            ConfirmAlert(Driver);
+            Thread.Sleep(1000);
 
             PromptAlert(Driver);
             Thread.Sleep(1000);

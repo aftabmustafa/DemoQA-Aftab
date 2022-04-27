@@ -16,6 +16,8 @@ namespace _9.DynamicProperties
 
             Driver.Navigate().GoToUrl("https://demoqa.com/dynamic-properties");
 
+            // If we get any exceptionm error then test failed else Pass
+
             IWebElement EnableAfter5Btn = Driver.FindElement(By.Id("enableAfter"));
             IWebElement ChameleonBtn = Driver.FindElement(By.Id("colorChange"));
 
@@ -34,9 +36,9 @@ namespace _9.DynamicProperties
             Assert.IsTrue(VisibleBtn.Count > 0);
             Assert.AreNotEqual(InitialColor, ChameleonBtn.GetCssValue("color"));
 
-            _ = 0;
-
             System.Console.WriteLine("Test End");
+
+            _ = 0;
 
             Thread.Sleep(3000);
 

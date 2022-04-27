@@ -1,0 +1,10 @@
+D:\Learning\Selenium\Submission\ToolsQA Submission-Aftab-Mustafa\AlertsFramesWindows\Frames\bin\Debug\Frames.exe.config
+D:\Learning\Selenium\Submission\ToolsQA Submission-Aftab-Mustafa\AlertsFramesWindows\Frames\bin\Debug\Frames.exe
+D:\Learning\Selenium\Submission\ToolsQA Submission-Aftab-Mustafa\AlertsFramesWindows\Frames\bin\Debug\Frames.pdb
+D:\Learning\Selenium\Submission\ToolsQA Submission-Aftab-Mustafa\AlertsFramesWindows\Frames\bin\Debug\WebDriver.dll
+D:\Learning\Selenium\Submission\ToolsQA Submission-Aftab-Mustafa\AlertsFramesWindows\Frames\obj\Debug\Frames.csproj.AssemblyReference.cache
+D:\Learning\Selenium\Submission\ToolsQA Submission-Aftab-Mustafa\AlertsFramesWindows\Frames\obj\Debug\Frames.csproj.SuggestedBindingRedirects.cache
+D:\Learning\Selenium\Submission\ToolsQA Submission-Aftab-Mustafa\AlertsFramesWindows\Frames\obj\Debug\Frames.csproj.CoreCompileInputs.cache
+D:\Learning\Selenium\Submission\ToolsQA Submission-Aftab-Mustafa\AlertsFramesWindows\Frames\obj\Debug\Frames.csproj.CopyComplete
+D:\Learning\Selenium\Submission\ToolsQA Submission-Aftab-Mustafa\AlertsFramesWindows\Frames\obj\Debug\Frames.exe
+D:\Learning\Selenium\Submission\ToolsQA Submission-Aftab-Mustafa\AlertsFramesWindows\Frames\obj\Debug\Frames.pdb

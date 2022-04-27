@@ -54,7 +54,8 @@ namespace _6.Links
             Driver.Quit();
         }
 
-        static void NewTabHandler(IWebDriver driver, [Optional] string Path)        // Path can be HTML id or XPath
+        // Optional is only for learning purpose
+        static void NewTabHandler(IWebDriver driver, [Optional] string Path)
         {
             driver.FindElement(By.Id(Path)).Click();
 

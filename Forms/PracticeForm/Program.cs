@@ -29,6 +29,7 @@ namespace PracticeForm
             IWebElement CloseModalBtn = Driver.FindElement(By.XPath("//button[@id='closeLargeModal']"));
             Js.ExecuteScript("arguments[0].click()", CloseModalBtn);
 
+            // Press Continue to Exit Script
             _ = 0;
 
             Driver.Close();
@@ -107,8 +108,6 @@ namespace PracticeForm
             IWebElement CalInputBox = driver.FindElement(By.XPath("//input[@id='dateOfBirthInput']"));
             CalInputBox.Click();
 
-            //js.ExecuteScript("arguments[0].click()", CalInputBox);
-
             Thread.Sleep(2000);
 
             action.MoveToElement(driver.FindElement(By.XPath("//input[@id='dateOfBirthInput']")))
@@ -158,11 +157,13 @@ namespace PracticeForm
 
             Thread.Sleep(2000);
 
-            //Next Button
-            driver.FindElement(By.XPath("//button[text()='Next Month']")).Click();
 
-            //Previous Button
-            driver.FindElement(By.XPath("//button[text()='Previous Month']")).Click();
+            // Uncomment Next and Previous btn logic to test
+            // Next Button
+            //driver.FindElement(By.XPath("//button[text()='Next Month']")).Click();
+
+            // Previous Button
+            //driver.FindElement(By.XPath("//button[text()='Previous Month']")).Click();
 
         }
 
@@ -199,15 +200,11 @@ namespace PracticeForm
                 }
             }
 
-
             // Dropdown Year Test
             IWebElement ClickDateDropdown = driver.FindElement(By.XPath("//select[contains(@class,'react-datepicker__year-select')]"));
             ClickDateDropdown.Click();
 
             string ExpYear = "2023";
-
-            // Current Year variable
-            //CurrMonthArrYear[1];
 
             ReadOnlyCollection<IWebElement> DateOptions = ClickDateDropdown.FindElements(By.TagName("option"));
 
@@ -308,7 +305,7 @@ namespace PracticeForm
         static void CurrentAddress(IWebDriver driver)
         {
             driver.FindElement(By.XPath("//textarea[@id='currentAddress']"))
-                .SendKeys("House of Kumbh Karan");
+                .SendKeys("Kumbha Karan er Bari");
         }
 
         static void SelectStateCity(IWebDriver driver, IJavaScriptExecutor js)
@@ -329,10 +326,6 @@ namespace PracticeForm
 
             IWebElement SubmitBtn = driver.FindElement(By.XPath("//button[@id='submit']"));
             js.ExecuteScript("arguments[0].click()", SubmitBtn);
-            
-            
-            //Actions action = new Actions(driver);
-            //action.MoveToElement(driver.FindElement(By.XPath("//button[@id='submit']"))).Click().Build().Perform();
         }
     }
 }
