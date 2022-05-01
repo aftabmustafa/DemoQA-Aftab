@@ -1,9 +1,0 @@
-D:\Learning\Selenium\Submission\ToolsQA Submission-Aftab-Mustafa\Elements\4.WebTables\bin\Debug\4.WebTables.exe.config
-D:\Learning\Selenium\Submission\ToolsQA Submission-Aftab-Mustafa\Elements\4.WebTables\bin\Debug\4.WebTables.exe
-D:\Learning\Selenium\Submission\ToolsQA Submission-Aftab-Mustafa\Elements\4.WebTables\bin\Debug\4.WebTables.pdb
-D:\Learning\Selenium\Submission\ToolsQA Submission-Aftab-Mustafa\Elements\4.WebTables\bin\Debug\WebDriver.dll
-D:\Learning\Selenium\Submission\ToolsQA Submission-Aftab-Mustafa\Elements\4.WebTables\obj\Debug\4.WebTables.csproj.AssemblyReference.cache
-D:\Learning\Selenium\Submission\ToolsQA Submission-Aftab-Mustafa\Elements\4.WebTables\obj\Debug\4.WebTables.csproj.CoreCompileInputs.cache
-D:\Learning\Selenium\Submission\ToolsQA Submission-Aftab-Mustafa\Elements\4.WebTables\obj\Debug\4.WebTables.csproj.CopyComplete
-D:\Learning\Selenium\Submission\ToolsQA Submission-Aftab-Mustafa\Elements\4.WebTables\obj\Debug\4.WebTables.exe
-D:\Learning\Selenium\Submission\ToolsQA Submission-Aftab-Mustafa\Elements\4.WebTables\obj\Debug\4.WebTables.pdb

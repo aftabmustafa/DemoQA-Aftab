@@ -1,8 +1,0 @@
-D:\Learning\Selenium\Submission\ToolsQA Submission-Aftab-Mustafa\Elements\8.UploadAndDownload\bin\Debug\8.UploadAndDownload.exe.config
-D:\Learning\Selenium\Submission\ToolsQA Submission-Aftab-Mustafa\Elements\8.UploadAndDownload\bin\Debug\8.UploadAndDownload.exe
-D:\Learning\Selenium\Submission\ToolsQA Submission-Aftab-Mustafa\Elements\8.UploadAndDownload\bin\Debug\8.UploadAndDownload.pdb
-D:\Learning\Selenium\Submission\ToolsQA Submission-Aftab-Mustafa\Elements\8.UploadAndDownload\bin\Debug\WebDriver.dll
-D:\Learning\Selenium\Submission\ToolsQA Submission-Aftab-Mustafa\Elements\8.UploadAndDownload\obj\Debug\8.UploadAndDownload.csproj.CoreCompileInputs.cache
-D:\Learning\Selenium\Submission\ToolsQA Submission-Aftab-Mustafa\Elements\8.UploadAndDownload\obj\Debug\8.UploadAndDownload.csproj.CopyComplete
-D:\Learning\Selenium\Submission\ToolsQA Submission-Aftab-Mustafa\Elements\8.UploadAndDownload\obj\Debug\8.UploadAndDownload.exe
-D:\Learning\Selenium\Submission\ToolsQA Submission-Aftab-Mustafa\Elements\8.UploadAndDownload\obj\Debug\8.UploadAndDownload.pdb

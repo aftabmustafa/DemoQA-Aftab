@@ -1,9 +1,0 @@
-D:\Learning\Selenium\Submission\ToolsQA Submission-Aftab-Mustafa\Elements\6.Links\bin\Debug\6.Links.exe.config
-D:\Learning\Selenium\Submission\ToolsQA Submission-Aftab-Mustafa\Elements\6.Links\bin\Debug\6.Links.exe
-D:\Learning\Selenium\Submission\ToolsQA Submission-Aftab-Mustafa\Elements\6.Links\bin\Debug\6.Links.pdb
-D:\Learning\Selenium\Submission\ToolsQA Submission-Aftab-Mustafa\Elements\6.Links\bin\Debug\WebDriver.dll
-D:\Learning\Selenium\Submission\ToolsQA Submission-Aftab-Mustafa\Elements\6.Links\obj\Debug\6.Links.csproj.AssemblyReference.cache
-D:\Learning\Selenium\Submission\ToolsQA Submission-Aftab-Mustafa\Elements\6.Links\obj\Debug\6.Links.csproj.CoreCompileInputs.cache
-D:\Learning\Selenium\Submission\ToolsQA Submission-Aftab-Mustafa\Elements\6.Links\obj\Debug\6.Links.csproj.CopyComplete
-D:\Learning\Selenium\Submission\ToolsQA Submission-Aftab-Mustafa\Elements\6.Links\obj\Debug\6.Links.exe
-D:\Learning\Selenium\Submission\ToolsQA Submission-Aftab-Mustafa\Elements\6.Links\obj\Debug\6.Links.pdb
