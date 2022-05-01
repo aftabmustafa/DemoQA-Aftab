@@ -1,9 +1,0 @@
-D:\Learning\Selenium\Submission\ToolsQA Submission-Aftab-Mustafa\Interactions\Sortable\bin\Debug\Sortable.exe.config
-D:\Learning\Selenium\Submission\ToolsQA Submission-Aftab-Mustafa\Interactions\Sortable\bin\Debug\Sortable.exe
-D:\Learning\Selenium\Submission\ToolsQA Submission-Aftab-Mustafa\Interactions\Sortable\bin\Debug\Sortable.pdb
-D:\Learning\Selenium\Submission\ToolsQA Submission-Aftab-Mustafa\Interactions\Sortable\bin\Debug\WebDriver.dll
-D:\Learning\Selenium\Submission\ToolsQA Submission-Aftab-Mustafa\Interactions\Sortable\obj\Debug\Sortable.csproj.AssemblyReference.cache
-D:\Learning\Selenium\Submission\ToolsQA Submission-Aftab-Mustafa\Interactions\Sortable\obj\Debug\Sortable.csproj.CoreCompileInputs.cache
-D:\Learning\Selenium\Submission\ToolsQA Submission-Aftab-Mustafa\Interactions\Sortable\obj\Debug\Sortable.csproj.CopyComplete
-D:\Learning\Selenium\Submission\ToolsQA Submission-Aftab-Mustafa\Interactions\Sortable\obj\Debug\Sortable.exe
-D:\Learning\Selenium\Submission\ToolsQA Submission-Aftab-Mustafa\Interactions\Sortable\obj\Debug\Sortable.pdb

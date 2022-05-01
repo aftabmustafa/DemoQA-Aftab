@@ -1,8 +1,0 @@
-D:\Learning\Selenium\Submission\ToolsQA Submission-Aftab-Mustafa\Widgets\Tabs\bin\Debug\Tabs.exe.config
-D:\Learning\Selenium\Submission\ToolsQA Submission-Aftab-Mustafa\Widgets\Tabs\bin\Debug\Tabs.exe
-D:\Learning\Selenium\Submission\ToolsQA Submission-Aftab-Mustafa\Widgets\Tabs\bin\Debug\Tabs.pdb
-D:\Learning\Selenium\Submission\ToolsQA Submission-Aftab-Mustafa\Widgets\Tabs\bin\Debug\WebDriver.dll
-D:\Learning\Selenium\Submission\ToolsQA Submission-Aftab-Mustafa\Widgets\Tabs\obj\Debug\Tabs.csproj.CoreCompileInputs.cache
-D:\Learning\Selenium\Submission\ToolsQA Submission-Aftab-Mustafa\Widgets\Tabs\obj\Debug\Tabs.csproj.CopyComplete
-D:\Learning\Selenium\Submission\ToolsQA Submission-Aftab-Mustafa\Widgets\Tabs\obj\Debug\Tabs.exe
-D:\Learning\Selenium\Submission\ToolsQA Submission-Aftab-Mustafa\Widgets\Tabs\obj\Debug\Tabs.pdb

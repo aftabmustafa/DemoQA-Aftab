@@ -1,8 +1,0 @@
-D:\Learning\Selenium\Submission\ToolsQA Submission-Aftab-Mustafa\Interactions\Resizable\bin\Debug\Resizable.exe.config
-D:\Learning\Selenium\Submission\ToolsQA Submission-Aftab-Mustafa\Interactions\Resizable\bin\Debug\Resizable.exe
-D:\Learning\Selenium\Submission\ToolsQA Submission-Aftab-Mustafa\Interactions\Resizable\bin\Debug\Resizable.pdb
-D:\Learning\Selenium\Submission\ToolsQA Submission-Aftab-Mustafa\Interactions\Resizable\bin\Debug\WebDriver.dll
-D:\Learning\Selenium\Submission\ToolsQA Submission-Aftab-Mustafa\Interactions\Resizable\obj\Debug\Resizable.csproj.CoreCompileInputs.cache
-D:\Learning\Selenium\Submission\ToolsQA Submission-Aftab-Mustafa\Interactions\Resizable\obj\Debug\Resizable.csproj.CopyComplete
-D:\Learning\Selenium\Submission\ToolsQA Submission-Aftab-Mustafa\Interactions\Resizable\obj\Debug\Resizable.exe
-D:\Learning\Selenium\Submission\ToolsQA Submission-Aftab-Mustafa\Interactions\Resizable\obj\Debug\Resizable.pdb

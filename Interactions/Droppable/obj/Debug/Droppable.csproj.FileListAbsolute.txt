@@ -1,9 +1,0 @@
-D:\Learning\Selenium\Submission\ToolsQA Submission-Aftab-Mustafa\Interactions\Droppable\obj\Debug\Droppable.csproj.AssemblyReference.cache
-D:\Learning\Selenium\Submission\ToolsQA Submission-Aftab-Mustafa\Interactions\Droppable\obj\Debug\Droppable.csproj.CoreCompileInputs.cache
-D:\Learning\Selenium\Submission\ToolsQA Submission-Aftab-Mustafa\Interactions\Droppable\bin\Debug\Droppable.exe.config
-D:\Learning\Selenium\Submission\ToolsQA Submission-Aftab-Mustafa\Interactions\Droppable\bin\Debug\Droppable.exe
-D:\Learning\Selenium\Submission\ToolsQA Submission-Aftab-Mustafa\Interactions\Droppable\bin\Debug\Droppable.pdb
-D:\Learning\Selenium\Submission\ToolsQA Submission-Aftab-Mustafa\Interactions\Droppable\bin\Debug\WebDriver.dll
-D:\Learning\Selenium\Submission\ToolsQA Submission-Aftab-Mustafa\Interactions\Droppable\obj\Debug\Droppable.csproj.CopyComplete
-D:\Learning\Selenium\Submission\ToolsQA Submission-Aftab-Mustafa\Interactions\Droppable\obj\Debug\Droppable.exe
-D:\Learning\Selenium\Submission\ToolsQA Submission-Aftab-Mustafa\Interactions\Droppable\obj\Debug\Droppable.pdb

@@ -1,15 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Interactions
+﻿namespace Interactions
 {
     class Program
     {
         static void Main(string[] args)
         {
+            bool ContinueTest = true;
+            
+            new Sortable().Run(ContinueTest);
         }
     }
 }

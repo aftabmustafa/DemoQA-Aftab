@@ -3,17 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.32413.511
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Interactions", "Interactions\Interactions.csproj", "{584CD64C-95CF-46CF-9F68-813A9F239B91}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sortable", "Sortable\Sortable.csproj", "{9951359D-AC4E-4B7D-837A-BC91CCA3909F}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Selectable", "Selectable\Selectable.csproj", "{266EAD0E-D76F-494E-A89E-7B96A19D3B9E}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Resizable", "Resizable\Resizable.csproj", "{248F8678-1B55-48F9-A249-F854EA907D66}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Droppable", "Droppable\Droppable.csproj", "{584019CF-B376-4DDE-ADDB-B93FF9A89FD7}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dragabble", "Dragabble\Dragabble.csproj", "{E790EDF7-881C-4571-8A0F-CC6E78D3DB09}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Interactions", "Interactions\Interactions.csproj", "{D4742F7D-BC40-4879-B7B0-B4232B898B82}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,35 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{584CD64C-95CF-46CF-9F68-813A9F239B91}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{584CD64C-95CF-46CF-9F68-813A9F239B91}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{584CD64C-95CF-46CF-9F68-813A9F239B91}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{584CD64C-95CF-46CF-9F68-813A9F239B91}.Release|Any CPU.Build.0 = Release|Any CPU
-		{9951359D-AC4E-4B7D-837A-BC91CCA3909F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{9951359D-AC4E-4B7D-837A-BC91CCA3909F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{9951359D-AC4E-4B7D-837A-BC91CCA3909F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{9951359D-AC4E-4B7D-837A-BC91CCA3909F}.Release|Any CPU.Build.0 = Release|Any CPU
-		{266EAD0E-D76F-494E-A89E-7B96A19D3B9E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{266EAD0E-D76F-494E-A89E-7B96A19D3B9E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{266EAD0E-D76F-494E-A89E-7B96A19D3B9E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{266EAD0E-D76F-494E-A89E-7B96A19D3B9E}.Release|Any CPU.Build.0 = Release|Any CPU
-		{248F8678-1B55-48F9-A249-F854EA907D66}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{248F8678-1B55-48F9-A249-F854EA907D66}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{248F8678-1B55-48F9-A249-F854EA907D66}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{248F8678-1B55-48F9-A249-F854EA907D66}.Release|Any CPU.Build.0 = Release|Any CPU
-		{584019CF-B376-4DDE-ADDB-B93FF9A89FD7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{584019CF-B376-4DDE-ADDB-B93FF9A89FD7}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{584019CF-B376-4DDE-ADDB-B93FF9A89FD7}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{584019CF-B376-4DDE-ADDB-B93FF9A89FD7}.Release|Any CPU.Build.0 = Release|Any CPU
-		{E790EDF7-881C-4571-8A0F-CC6E78D3DB09}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E790EDF7-881C-4571-8A0F-CC6E78D3DB09}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E790EDF7-881C-4571-8A0F-CC6E78D3DB09}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E790EDF7-881C-4571-8A0F-CC6E78D3DB09}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D4742F7D-BC40-4879-B7B0-B4232B898B82}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D4742F7D-BC40-4879-B7B0-B4232B898B82}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D4742F7D-BC40-4879-B7B0-B4232B898B82}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D4742F7D-BC40-4879-B7B0-B4232B898B82}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {345C656C-CE62-4267-A456-408DFE73382E}
+		SolutionGuid = {6F01F29D-6C5B-4F08-82D9-7F1EAA7DA352}
 	EndGlobalSection
 EndGlobal

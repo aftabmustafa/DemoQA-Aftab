@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{584CD64C-95CF-46CF-9F68-813A9F239B91}</ProjectGuid>
+    <ProjectGuid>{D4742F7D-BC40-4879-B7B0-B4232B898B82}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <RootNamespace>Interactions</RootNamespace>
     <AssemblyName>Interactions</AssemblyName>
@@ -49,8 +49,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Dragabble.cs" />
+    <Compile Include="Droppable.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Resizable.cs" />
+    <Compile Include="Selectable.cs" />
+    <Compile Include="Sortable.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
