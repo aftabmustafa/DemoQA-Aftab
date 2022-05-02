@@ -1,10 +1,9 @@
 ﻿using OpenQA.Selenium;
-using OpenQA.Selenium.Chrome;
-using System.Threading;
+using DqLib;
 
 namespace Elements
 {
-    internal class TextBox
+    internal class TextBox : SeleniumLib
     {
         public void Run(bool Continue)
         {
@@ -13,54 +12,48 @@ namespace Elements
             string CAddress = "Current Address 1";
             string PAddress = "Permanent Address 2";
 
-            IWebDriver Driver = new ChromeDriver();
             IJavaScriptExecutor Js = (IJavaScriptExecutor)Driver;
 
             try
             {
-                Driver.Manage().Window.Maximize();
-                Driver.Navigate().GoToUrl("https://demoqa.com/text-box");
+                StartBrowser("https://demoqa.com/text-box");
 
-                Thread.Sleep(1000);
+                Sleep(1000);
 
-                Driver.FindElement(By.Id("userName")).SendKeys(FName);
+                TextInput(By.Id("userName"), FName);
 
-                Thread.Sleep(1000);
+                Sleep(1000);
 
-                Driver.FindElement(By.Id("userEmail")).SendKeys(Email);
+                TextInput(By.Id("userEmail"), Email);
 
-                Thread.Sleep(1000);
+                Sleep(1000);
 
-                Driver.FindElement(By.Id("currentAddress")).SendKeys(CAddress);
+                TextInput(By.Id("currentAddress"), CAddress);
 
-                Thread.Sleep(1000);
+                Sleep(1000);
 
-                Driver.FindElement(By.Id("permanentAddress")).SendKeys(PAddress);
+                TextInput(By.Id("permanentAddress"), PAddress);
 
-                Thread.Sleep(1000);
+                Sleep(1000);
 
-                Js.ExecuteScript("window.scrollBy(0, 200)");
+                //Js.ExecuteScript("window.scrollBy(0, 200)");
 
-                Thread.Sleep(1000);
+                Scroll(0, 200);
 
-                IWebElement SubmitBtn = Driver.FindElement(By.Id("submit"));
+                Sleep(1000);
 
-                SubmitBtn.Click();
+                SimpleClick(By.Id("submit"));
 
-                System.Console.WriteLine("Text Box Check Successful");
+                Sleep(2000);
 
-                Thread.Sleep(2000);
-
-                Driver.Close();
-                Driver.Quit();
+                CloseBrowser();
 
             }
             catch (System.Exception e)
             {
                 System.Console.WriteLine(e.Message);
-                Thread.Sleep(5000);
-                Driver.Close();
-                Driver.Quit();
+                Sleep(5000);
+                CloseBrowser();
             }
 
             if (Continue)

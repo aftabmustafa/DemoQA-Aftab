@@ -1,0 +1,8 @@
+D:\Learning\Selenium\Submission\ToolsQA Submission-Aftab-Mustafa\DqLib\DqLib\bin\Debug\DqLib.dll
+D:\Learning\Selenium\Submission\ToolsQA Submission-Aftab-Mustafa\DqLib\DqLib\bin\Debug\DqLib.pdb
+D:\Learning\Selenium\Submission\ToolsQA Submission-Aftab-Mustafa\DqLib\DqLib\bin\Debug\WebDriver.dll
+D:\Learning\Selenium\Submission\ToolsQA Submission-Aftab-Mustafa\DqLib\DqLib\obj\Debug\DqLib.csproj.AssemblyReference.cache
+D:\Learning\Selenium\Submission\ToolsQA Submission-Aftab-Mustafa\DqLib\DqLib\obj\Debug\DqLib.csproj.CoreCompileInputs.cache
+D:\Learning\Selenium\Submission\ToolsQA Submission-Aftab-Mustafa\DqLib\DqLib\obj\Debug\DqLib.csproj.CopyComplete
+D:\Learning\Selenium\Submission\ToolsQA Submission-Aftab-Mustafa\DqLib\DqLib\obj\Debug\DqLib.dll
+D:\Learning\Selenium\Submission\ToolsQA Submission-Aftab-Mustafa\DqLib\DqLib\obj\Debug\DqLib.pdb
