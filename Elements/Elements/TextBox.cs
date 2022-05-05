@@ -5,14 +5,12 @@ namespace Elements
 {
     internal class TextBox : SeleniumLib
     {
-        public void Run(bool Continue)
+        public void Run()
         {
             string FName = "Aftab Mustafa";
             string Email = "email@gmail.com";
             string CAddress = "Current Address 1";
             string PAddress = "Permanent Address 2";
-
-            IJavaScriptExecutor Js = (IJavaScriptExecutor)Driver;
 
             try
             {
@@ -36,8 +34,6 @@ namespace Elements
 
                 Sleep(1000);
 
-                //Js.ExecuteScript("window.scrollBy(0, 200)");
-
                 Scroll(0, 200);
 
                 Sleep(1000);
@@ -47,7 +43,6 @@ namespace Elements
                 Sleep(2000);
 
                 CloseBrowser();
-
             }
             catch (System.Exception e)
             {
@@ -56,8 +51,8 @@ namespace Elements
                 CloseBrowser();
             }
 
-            if (Continue)
-                new CheckBox().Run(Continue);
+            if (Prompt())
+                new CheckBox().Run();
         }
     }
 }

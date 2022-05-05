@@ -1,54 +1,48 @@
 ﻿using OpenQA.Selenium;
-using OpenQA.Selenium.Chrome;
-using System.Threading;
+using DqLib;
 
 namespace Elements
 {
-    class WebTables
+    class WebTables : SeleniumLib
     {
-        public void Run(bool Continue)
+        public void Run()
         {
-            IWebDriver Driver = new ChromeDriver();
-
             try
             {
-                Driver.Manage().Window.Maximize();
+                StartBrowser("https://demoqa.com/webtables");
 
-                Driver.Navigate().GoToUrl("https://demoqa.com/webtables");
+                Sleep(2000);
 
-                Thread.Sleep(2000);
+                SearchQuery();
 
-                SearchQuery(Driver);
+                Sleep(2000);
 
-                Thread.Sleep(2000);
+                AddQuery();
 
-                AddQuery(Driver);
+                Sleep(2000);
 
-                Thread.Sleep(2000);
+                EditRecord();
 
-                EditRecord(Driver);
+                Sleep(2000);
 
-                Thread.Sleep(2000);
+                DeleteRecord();
 
-                DeleteRecord(Driver);
+                Sleep(5000);
 
-                Thread.Sleep(5000);
-
-                Driver.Close();
-                Driver.Quit();
+                CloseBrowser();
             }
             catch (System.Exception e)
             {
                 System.Console.WriteLine(e.Message);
-                Thread.Sleep(5000);
-                Driver.Quit();
+                Sleep(5000);
+                CloseBrowser();
             }
 
-            if (Continue)
-                new Buttons().Run(Continue);
+            if (Prompt())
+                new Buttons().Run();
         }
 
-        static void AddQuery(IWebDriver driver)
+        public void AddQuery()
         {
             string fName = "A";
             string lName = "Mustafa";
@@ -57,57 +51,64 @@ namespace Elements
             string age = "21";
             string salary = "500000000";
 
-            driver.FindElement(By.Id("addNewRecordButton")).Click();
+            SimpleClick(By.Id("addNewRecordButton"));
 
-            Thread.Sleep(1000);
+            Sleep(1000);
 
-            driver.FindElement(By.Id("firstName")).SendKeys(fName);
-            Thread.Sleep(2000);
-            driver.FindElement(By.Id("lastName")).SendKeys(lName);
-            Thread.Sleep(2000);
-            driver.FindElement(By.Id("userEmail")).SendKeys(email);
-            Thread.Sleep(2000);
-            driver.FindElement(By.Id("age")).SendKeys(age);
-            Thread.Sleep(2000);
-            driver.FindElement(By.Id("salary")).SendKeys(salary);
-            Thread.Sleep(2000);
-            driver.FindElement(By.Id("department")).SendKeys(dept);
-            Thread.Sleep(2000);
+            TextInput(By.Id("firstName"), fName);
 
-            driver.FindElement(By.Id("submit")).Click();
+            Sleep(2000);
+
+            TextInput(By.Id("lastName"), lName);
+
+            Sleep(2000);
+
+            TextInput(By.Id("userEmail"), email);
+
+            Sleep(2000);
+
+            TextInput(By.Id("age"), age);
+
+            Sleep(2000);
+
+            TextInput(By.Id("salary"), salary);
+
+            Sleep(2000);
+
+            TextInput(By.Id("department"), dept);
+
+            Sleep(2000);
+
+            SimpleClick(By.Id("submit"));
 
         }
 
-        static void SearchQuery(IWebDriver driver)
+        public void SearchQuery()
         {
-            IWebElement searchBox = driver.FindElement(By.Id("searchBox"));
-            searchBox.SendKeys("Cierra");
+            TextInput(By.Id("searchBox"), "Cierra");
 
-            Thread.Sleep(3000);
+            Sleep(3000);
 
-            searchBox.Clear();
-
-            // !!!Temporary fix
-            searchBox.SendKeys("a");
+            ActionClearInput(By.Id("searchBox"));
         }
 
-        static void EditRecord(IWebDriver driver)
+        public void EditRecord()
         {
-            driver.FindElement(By.Id("edit-record-4")).Click();
+            SimpleClick(By.Id("edit-record-4"));
 
-            Thread.Sleep(2000);
+            Sleep(2000);
 
-            driver.FindElement(By.Id("firstName")).Clear();
-            driver.FindElement(By.Id("firstName")).SendKeys("Aftab");
+            ClearTextInput(By.Id("firstName"));
+            TextInput(By.Id("firstName"), "Aftab");
 
-            Thread.Sleep(2000);
+            Sleep(2000);
 
-            driver.FindElement(By.Id("submit")).Click();
+            SimpleClick(By.Id("submit"));
         }
 
-        static void DeleteRecord(IWebDriver driver)
+        public void DeleteRecord()
         {
-            driver.FindElement(By.Id("delete-record-4")).Click();
+            SimpleClick(By.Id("delete-record-4"));
         }
     }
 }

@@ -4,9 +4,7 @@
     {
         static void Main(string[] args)
         {
-            bool ContinueTest = true;
-
-            new TextBox().Run(ContinueTest);
+            new TextBox().Run();
         }
     }
 }

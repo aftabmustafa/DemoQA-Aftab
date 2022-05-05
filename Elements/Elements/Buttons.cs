@@ -1,72 +1,46 @@
 ﻿using OpenQA.Selenium;
-using OpenQA.Selenium.Chrome;
-using OpenQA.Selenium.Interactions;
-using System.Threading;
-
+using DqLib;
 
 namespace Elements
 {
-    class Buttons
+    class Buttons : SeleniumLib
     {
-        public void Run(bool Continue)
+        public void Run()
         {
-            IWebDriver Driver = new ChromeDriver();
-            Actions ActionProvider = new Actions(Driver);
-
             try
             {
-                Driver.Manage().Window.Maximize();
+                StartBrowser("https://demoqa.com/buttons");
 
-                Driver.Navigate().GoToUrl("https://demoqa.com/buttons");
+                Sleep(2000);
 
-                DoubleClick(Driver, ActionProvider);
+                DoubleClick(By.Id("doubleClickBtn"));
 
-                Thread.Sleep(2000);
+                Sleep(2000);
 
-                RightClick(Driver, ActionProvider);
+                ContextClick(By.Id("rightClickBtn"));
 
-                Thread.Sleep(2000);
+                Sleep(2000);
 
                 // Single Click using CSS
-                Driver.FindElements(By.ClassName("btn-primary"))[2].Click();
+                ClickUsingIndex(By.ClassName("btn-primary"), 2);
+
 
                 // Single Click using XPath
-                //Driver.FindElement(By.XPath("//button[text()='Click Me']")).Click();
+                SimpleClick(By.XPath("//button[text()='Click Me']"));
 
-                Thread.Sleep(2000);
+                Sleep(2000);
 
-                Driver.Close();
-                Driver.Quit();
+                CloseBrowser();
             }
             catch (System.Exception e)
             {
                 System.Console.WriteLine(e.Message);
-                Thread.Sleep(5000);
-                Driver.Close();
-                Driver.Quit();
+                Sleep(5000);
+                CloseBrowser();
             }
-
-            if (Continue)
-                new Links().Run(Continue);
-        }
-
-        static void DoubleClick(IWebDriver driver, Actions actionProvider)
-        {
-            IWebElement doubleClickBtn = driver.FindElement(By.Id("doubleClickBtn"));
-
-            // XPath
-            //IWebElement doubleClickBtn = driver.FindElement(By.XPath("//button[@id='doubleClickBtn']"));
-
-            actionProvider.DoubleClick(doubleClickBtn).Build().Perform();
-        }
-
-        static void RightClick(IWebDriver driver, Actions actionProvider)
-        {
-            IWebElement RightClickBtn = driver.FindElement(By.Id("rightClickBtn"));
-
-            // XPath
-            //IWebElement RightClickBtn = driver.FindElement(By.XPath("//button[@id='rightClickBtn']"));
-            actionProvider.ContextClick(RightClickBtn).Build().Perform();
+            
+            if (Prompt())
+                new Links().Run();
         }
     }
 }

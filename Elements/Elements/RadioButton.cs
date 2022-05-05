@@ -1,69 +1,37 @@
 ﻿using OpenQA.Selenium;
-using OpenQA.Selenium.Chrome;
-using System.Threading;
+using DqLib;
 
 namespace Elements
 {
-    internal class RadioButton
+    internal class RadioButton : SeleniumLib
     {
-        public void Run(bool Continue)
+        public void Run()
         {
-            IWebDriver Driver = new ChromeDriver();
-            IJavaScriptExecutor Js = (IJavaScriptExecutor)Driver;
-
             try
-            {
-                Driver.Manage().Window.Maximize();
+            { 
+                StartBrowser("https://demoqa.com/radio-button");
 
-                Driver.Navigate().GoToUrl("https://demoqa.com/radio-button");
+                Sleep(1000);
 
-                Thread.Sleep(1000);
+                JsClick(By.Id("yesRadio"));
 
-                #region 1. Using Id
+                Sleep(1000);
 
-                IWebElement YesBtn = Driver.FindElement(By.Id("yesRadio"));
-                Js.ExecuteScript("arguments[0].click()", YesBtn);
+                JsClick(By.Id("impressiveRadio"));
 
-                Thread.Sleep(1000);
+                Sleep(3000);
 
-                IWebElement ImpressBtn = Driver.FindElement(By.Id("impressiveRadio"));
-
-                Js.ExecuteScript("arguments[0].click()", ImpressBtn);
-
-                Thread.Sleep(3000);
-
-                #endregion
-
-                #region 2. Using XPath
-
-                //IWebElement YesBtn = Driver.FindElements(By.XPath("//input[contains(@class,'custom-control-input')]"))[0];
-
-                //Js.ExecuteScript("arguments[0].click()", YesBtn);
-
-                //Thread.Sleep(2000);
-
-                //IWebElement ImpressBtn = Driver.FindElements(By.XPath("//input[contains(@class,'custom-control-input')]"))[1];
-
-                //Js.ExecuteScript("arguments[0].click()", ImpressBtn);
-
-                //Thread.Sleep(2000);
-
-                #endregion
-
-                Thread.Sleep(3000);
-
-                Driver.Close();
-                Driver.Quit();
+                CloseBrowser();
             }
             catch (System.Exception e)
             {
                 System.Console.WriteLine(e.Message);
-                Thread.Sleep(5000);
-                Driver.Quit();
+                Sleep(5000);
+                CloseBrowser();
             }
 
-            if (Continue)
-                new WebTables().Run(Continue);
+            if (Prompt())
+                new WebTables().Run();
         }
     }
 }

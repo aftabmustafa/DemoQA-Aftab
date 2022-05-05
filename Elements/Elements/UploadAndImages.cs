@@ -1,44 +1,42 @@
 ﻿using OpenQA.Selenium;
-using OpenQA.Selenium.Chrome;
-using System.Threading;
+using DqLib;
 
 namespace Elements
 {
-    class UploadAndImages
+    class UploadAndImages : SeleniumLib
     {
-        public void Run(bool Continue)
+        public void Run()
         {
-            IWebDriver Driver = new ChromeDriver();
-
             try
             {
-                Driver.Manage().Window.Maximize();
+                StartBrowser("https://demoqa.com/upload-download");
 
-                Driver.Navigate().GoToUrl("https://demoqa.com/upload-download");
+                Sleep(1000);
 
-                Thread.Sleep(1000);
+                SimpleClick(By.Id("downloadButton"));
 
-                Driver.FindElement(By.Id("downloadButton")).Click();
+                Sleep(3000);
 
-                Thread.Sleep(3000);
+                //Driver.FindElement(By.Id("uploadFile")).SendKeys(@"C:\Users\" + System.Environment.UserName + @"\Downloads\sampleFile.jpeg");
 
-                Driver.FindElement(By.Id("uploadFile")).SendKeys(@"C:\Users\" + System.Environment.UserName + @"\Downloads\sampleFile.jpeg");
+                UploadFile(By.Id("uploadFile"), @"C:\Users\" + System.Environment.UserName + @"\Downloads\sampleFile.jpeg");
 
-                Thread.Sleep(3000);
+                // This path is only for My Laptop
+                //UploadFile(By.Id("uploadFile"), @"C:\Users\gulam\Downloads\sampleFile.jpeg");
 
-                Driver.Close();
-                Driver.Quit();
+                Sleep(3000);
+
+                CloseBrowser();
             }
 
             catch (System.Exception e)
             {
                 System.Console.WriteLine(e.Message);
-                Thread.Sleep(5000);
-                Driver.Close();
-                Driver.Quit();
+                Sleep(5000);
+                CloseBrowser();
             }
 
-            if (Continue)
+            if (Prompt())
                 new DynamicProperties().Run();
         }
     }

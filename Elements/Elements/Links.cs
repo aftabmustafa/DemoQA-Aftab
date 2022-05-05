@@ -1,90 +1,83 @@
 ﻿using OpenQA.Selenium;
-using OpenQA.Selenium.Chrome;
 using System.Runtime.InteropServices;
-using System.Threading;
+using DqLib;
 
-namespace Elements
+namespace Elements  
 {
-    class Links
+    class Links : SeleniumLib
     {
-        public void Run(bool Continue)
+        public void Run()
         {
-            IWebDriver Driver = new ChromeDriver();
-            IJavaScriptExecutor Js = (IJavaScriptExecutor)Driver;
-
             try
             {
-                Driver.Manage().Window.Maximize();
+                StartBrowser("https://demoqa.com/links");
 
-                Driver.Navigate().GoToUrl("https://demoqa.com/links");
-
-                Thread.Sleep(1000);
+                Sleep(1000);
 
                 // 1st Link under Open New Tab
-                NewTabHandler(Driver, "simpleLink");
+                NewTabHandler("simpleLink");
 
                 // 2nd Link under Open New Tab
-                //NewTabHandler(Driver, "dynamicLink");
+                //NewTabHandler("dynamicLink");
 
-                Thread.Sleep(3000);
+                Sleep(3000);
 
-                Js.ExecuteScript("window.scrollBy(0, 150)");
+                Scroll(0, 150);
 
-                APILinkHandler(Driver, "created");
-                Thread.Sleep(1000);
+                APILinkHandler("created");
+                Sleep(1000);
 
-                APILinkHandler(Driver, "no-content");
-                Thread.Sleep(2000);
+                APILinkHandler("no-content");
+                Sleep(2000);
 
-                APILinkHandler(Driver, "moved");
-                Thread.Sleep(2000);
+                APILinkHandler("moved");
+                Sleep(2000);
 
-                APILinkHandler(Driver, "bad-request");
-                Thread.Sleep(2000);
+                APILinkHandler("bad-request");
+                Sleep(2000);
 
-                APILinkHandler(Driver, "unauthorized");
-                Thread.Sleep(2000);
+                APILinkHandler("unauthorized");
+                Sleep(2000);
 
-                APILinkHandler(Driver, "forbidden");
-                Thread.Sleep(2000);
+                APILinkHandler("forbidden");
+                Sleep(2000);
 
-                APILinkHandler(Driver, "invalid-url");
+                APILinkHandler("invalid-url");
 
-                Thread.Sleep(2000);
+                Sleep(2000);
 
-                Driver.Close();
-                Driver.Quit();
+                CloseBrowser();
             }
             catch(System.Exception e)
             {
                 System.Console.WriteLine(e.Message);
-                Thread.Sleep(5000);
-                Driver.Close();
-                Driver.Quit();
+                Sleep(5000);
+                CloseBrowser();
             }
 
-            if (Continue)
-                new BrokenLinks().Run(Continue);
+            if (Prompt())
+                new BrokenLinks().Run();
         }
+
         // Optional is only for learning purpose
-        static void NewTabHandler(IWebDriver driver, [Optional] string Path)
+        public void NewTabHandler([Optional] string Path)
         {
-            driver.FindElement(By.Id(Path)).Click();
+            SimpleClick(By.Id(Path));
 
-            Thread.Sleep(1000);
+            Sleep(1000);
 
-            driver.SwitchTo().Window(driver.WindowHandles[1]);
+            Driver.SwitchTo().Window(Driver.WindowHandles[1]);
 
-            Thread.Sleep(1000);
+            Sleep(1000);
 
-            driver.Close();
+            Driver.Close();
 
-            driver.SwitchTo().Window(driver.WindowHandles[0]);
+            Driver.SwitchTo().Window(Driver.WindowHandles[0]);
         }
 
-        static void APILinkHandler(IWebDriver driver, [Optional] string Path)
+        public void APILinkHandler([Optional] string Path)
         {
-            driver.FindElement(By.Id(Path)).Click();
+            SimpleClick(By.Id(Path));
         }
 
     }

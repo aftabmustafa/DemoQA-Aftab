@@ -1,23 +1,19 @@
 ﻿using NUnit.Framework;
 using OpenQA.Selenium;
-using OpenQA.Selenium.Chrome;
 using System.Collections.ObjectModel;
-using System.Threading;
+using DqLib;
+
 namespace Elements
 {
-    class DynamicProperties
+    class DynamicProperties : SeleniumLib
     {
         public void Run()
         {
-            IWebDriver Driver = new ChromeDriver();
-
-            Driver.Manage().Window.Maximize();
-
             try
             {
-                Driver.Navigate().GoToUrl("https://demoqa.com/dynamic-properties");
+                StartBrowser("https://demoqa.com/dynamic-properties");
 
-                // If we get any exceptionm error then test failed else Pass
+                // If we get any exceptionm error then test Failed else Pass
 
                 IWebElement EnableAfter5Btn = Driver.FindElement(By.Id("enableAfter"));
                 IWebElement ChameleonBtn = Driver.FindElement(By.Id("colorChange"));
@@ -29,7 +25,7 @@ namespace Elements
                 Assert.IsFalse(EnableAfter5Btn.Enabled);
                 Assert.IsTrue(IsVisibleBtn.Count == 0);
 
-                Thread.Sleep(5100);
+                Sleep(5100);
 
                 ReadOnlyCollection<IWebElement> VisibleBtn = Driver.FindElements(By.Id("visibleAfter"));
 
@@ -39,21 +35,16 @@ namespace Elements
 
                 System.Console.WriteLine("Test End");
 
-                Thread.Sleep(3000);
+                Sleep(3000);
 
-                Driver.Close();
-                Driver.Quit();
+                CloseBrowser();
             }
             catch(System.Exception e)
             {
                 System.Console.WriteLine(e.Message);
-                Thread.Sleep(5000);
-                Driver.Close();
-                Driver.Quit();
+                Sleep(5000);
+                CloseBrowser();
             }
-
-            Driver.Quit();
-
         }
     }
 }
