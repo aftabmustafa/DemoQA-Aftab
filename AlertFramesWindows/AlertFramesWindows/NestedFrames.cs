@@ -1,22 +1,17 @@
 ﻿using OpenQA.Selenium;
-using OpenQA.Selenium.Chrome;
-using System.Threading;
+using DqLib;
 
 namespace AlertFramesWindows
 {
-    class NestedFrames
+    class NestedFrames : SeleniumLib
     {
-        public void Run(bool Continue)
+        public void Run()
         {
-            IWebDriver Driver = new ChromeDriver();
-
             try
             {
-                Driver.Manage().Window.Maximize();
+                StartBrowser("https://demoqa.com/nestedframes");
 
-                Driver.Navigate().GoToUrl("https://demoqa.com/nestedframes");
-
-                Thread.Sleep(3000);
+                Sleep(3000);
 
                 // Number of Frames Inside Default Content
                 int CountIFrameInDefault = Driver.FindElements(By.TagName("iframe")).Count;
@@ -42,20 +37,17 @@ namespace AlertFramesWindows
 
                 System.Console.WriteLine($"Text Inside Child Frame: {ChildFrameText}");
 
-                _ = 0;
-
-                Driver.Close();
-                Driver.Quit();
+                CloseBrowser();
             }
             catch (System.Exception e)
             {
                 System.Console.WriteLine(e.Message);
-                Thread.Sleep(5000);
-                Driver.Close();
-                Driver.Quit();
+                Sleep(5000);
+
+                CloseBrowser();
             }
 
-            if (Continue)
+            if (Prompt())
                 new ModalDialogs().Run();
         }
     }

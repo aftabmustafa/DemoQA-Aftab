@@ -1,96 +1,86 @@
 ﻿using NUnit.Framework;
 using OpenQA.Selenium;
-using OpenQA.Selenium.Chrome;
-using System.Threading;
+using DqLib;
 
 namespace AlertFramesWindows
 {
-    class BrowserWindows
+    class BrowserWindows : SeleniumLib
     {
-        public void Run(bool Continue)
+        public void Run()
         {
-            IWebDriver Driver = new ChromeDriver();
-            IJavaScriptExecutor Js = (IJavaScriptExecutor)Driver;
-
             try
             {
-                Driver.Manage().Window.Maximize();
-
-                Driver.Navigate().GoToUrl("https://demoqa.com/browser-windows");
+                StartBrowser("https://demoqa.com/browser-windows");
 
                 // If we got No Exception in these method, it means we've verified that browser has open NewTab / New Window.
 
-                NewTab(Driver);
+                NewTab();
 
-                Thread.Sleep(3000);
+                Sleep(3000);
 
-                NewWindow(Driver);
+                NewWindow();
 
-                Thread.Sleep(3000);
+                Sleep(3000);
 
-                NewWindowMessage(Driver);
+                NewWindowMessage();
 
-                // Look at Console Please!
-                _ = 0;
-
-                Driver.Close();
-                Driver.Quit();
+                CloseBrowser(); 
             }
 
             catch (System.Exception e)
             {
                 System.Console.WriteLine(e.Message);
-                Thread.Sleep(5000);
-                Driver.Close();
-                Driver.Quit();
+                Sleep(5000);
+              
+                CloseBrowser();
             }
 
-            if (Continue)
-                new Alerts().Run(Continue);
+            if (Prompt())
+                new Alerts().Run();
         }
 
-        static void NewTab(IWebDriver driver)
+        public void NewTab()
         {
-            IWebElement NewTabBtn = driver.FindElement(By.XPath("//button[@id='tabButton']"));
+            IWebElement NewTabBtn = Driver.FindElement(By.XPath("//button[@id='tabButton']"));
 
-            Assert.AreEqual(1, driver.WindowHandles.Count);
+            Assert.AreEqual(1, Driver.WindowHandles.Count);
 
             NewTabBtn.Click();
 
-            Thread.Sleep(3000);
+            Sleep(3000);
 
-            Assert.AreEqual(2, driver.WindowHandles.Count);
+            Assert.AreEqual(2, Driver.WindowHandles.Count);
 
             System.Console.WriteLine();
             System.Console.WriteLine("-------------- New Tab Console Start --------------");
-            System.Console.WriteLine($"Parent Tab ID - {driver.WindowHandles[0]}");
+            System.Console.WriteLine($"Parent Tab ID - {Driver.WindowHandles[0]}");
             System.Console.WriteLine();
 
-            var NewTabHandle = driver.WindowHandles[1];
+            var NewTabHandle = Driver.WindowHandles[1];
             Assert.IsTrue(!string.IsNullOrEmpty(NewTabHandle));
 
-            System.Console.WriteLine($"Child Tab ID - {driver.WindowHandles[1]}");
+            System.Console.WriteLine($"Child Tab ID - {Driver.WindowHandles[1]}");
             System.Console.WriteLine("-------------- New Tab Console End --------------");
 
-            Assert.AreEqual(driver.SwitchTo().Window(NewTabHandle).Url, "https://demoqa.com/sample");
+            Assert.AreEqual(Driver.SwitchTo().Window(NewTabHandle).Url, "https://demoqa.com/sample");
 
-            driver.SwitchTo().Window(driver.WindowHandles[1]).Close();
-            driver.SwitchTo().Window(driver.WindowHandles[0]);
+            Driver.SwitchTo().Window(Driver.WindowHandles[1]).Close();
+            Driver.SwitchTo().Window(Driver.WindowHandles[0]);
         }
 
-        static void NewWindow(IWebDriver driver)
+        public void NewWindow()
         {
-            IWebElement NewWindowBtn = driver.FindElement(By.XPath("//button[@id='windowButton']"));
+            IWebElement NewWindowBtn = Driver.FindElement(By.XPath("//button[@id='windowButton']"));
             NewWindowBtn.Click();
 
-            Thread.Sleep(3000);
+            Sleep(3000);
 
-            Assert.AreEqual(2, driver.WindowHandles.Count);
+            Assert.AreEqual(2, Driver.WindowHandles.Count);
 
-            var NewWindowHandle = driver.WindowHandles[1];
+            var NewWindowHandle = Driver.WindowHandles[1];
             Assert.IsTrue(!string.IsNullOrEmpty(NewWindowHandle));
 
-            string NewWindowMessage = driver.SwitchTo().Window(driver.WindowHandles[1]).FindElement(By.Id("sampleHeading")).Text;
+            string NewWindowMessage = Driver.SwitchTo().Window(Driver.WindowHandles[1]).FindElement(By.Id("sampleHeading")).Text;
 
             System.Console.WriteLine();
             System.Console.WriteLine("-------------- New Window Console Start --------------");
@@ -99,29 +89,29 @@ namespace AlertFramesWindows
             System.Console.WriteLine();
 
 
-            driver.SwitchTo().Window(driver.WindowHandles[1]).Close();
-            Thread.Sleep(2000);
+            Driver.SwitchTo().Window(Driver.WindowHandles[1]).Close();
+            Sleep(2000);
 
-            driver.SwitchTo().Window(driver.WindowHandles[0]);
+            Driver.SwitchTo().Window(Driver.WindowHandles[0]);
         }
 
-        static void NewWindowMessage(IWebDriver driver)
+        public void NewWindowMessage()
         {
-            IWebElement NewWindowMessage = driver.FindElement(By.XPath("//button[@id='messageWindowButton']"));
+            IWebElement NewWindowMessage = Driver.FindElement(By.XPath("//button[@id='messageWindowButton']"));
 
             NewWindowMessage.Click();
 
-            Thread.Sleep(3000);
+            Sleep(3000);
 
-            Assert.AreEqual(2, driver.WindowHandles.Count);
+            Assert.AreEqual(2, Driver.WindowHandles.Count);
 
-            var NewWindowMessageHandle = driver.WindowHandles[1];
+            var NewWindowMessageHandle = Driver.WindowHandles[1];
             Assert.IsTrue(!string.IsNullOrEmpty(NewWindowMessageHandle));
 
-            driver.SwitchTo().Window(driver.WindowHandles[1]).Close();
-            Thread.Sleep(2000);
+            Driver.SwitchTo().Window(Driver.WindowHandles[1]).Close();
+            Sleep(2000);
 
-            driver.SwitchTo().Window(driver.WindowHandles[0]);
+            Driver.SwitchTo().Window(Driver.WindowHandles[0]);
         }
     }
 }

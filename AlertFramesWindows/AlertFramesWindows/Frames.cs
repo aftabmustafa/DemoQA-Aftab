@@ -1,20 +1,17 @@
 ﻿using OpenQA.Selenium;
-using OpenQA.Selenium.Chrome;
-using System.Threading;
+using DqLib;
 
 namespace AlertFramesWindows
 {
-    class Frames
+    class Frames : SeleniumLib
     {
-        public void Run(bool Continue)
+        public void Run()
         {
-            IWebDriver Driver = new ChromeDriver();
             try
             {
-                Driver.Manage().Window.Maximize();
-                Driver.Navigate().GoToUrl("https://demoqa.com/frames");
+                StartBrowser("https://demoqa.com/frames");
 
-                Thread.Sleep(3000);
+                Sleep(3000);
 
                 // Different Ways to Switch Frame
                 // 1.
@@ -44,21 +41,18 @@ namespace AlertFramesWindows
 
                 System.Console.WriteLine(Frame2Text);
 
-                _ = 0;
-
-                Driver.Close();
-                Driver.Quit();
+                CloseBrowser();
             }
             catch(System.Exception e)
             {
                 System.Console.WriteLine(e.Message);
-                Thread.Sleep(5000);
-                Driver.Close();
-                Driver.Quit();
+                Sleep(5000);
+
+                CloseBrowser();
             }
 
-            if (Continue)
-                new NestedFrames().Run(Continue);
+            if (Prompt())
+                new NestedFrames().Run();
         }
     }
 }

@@ -1,54 +1,46 @@
 ﻿using OpenQA.Selenium;
-using OpenQA.Selenium.Chrome;
-using System.Threading;
+using DqLib;
 
 namespace AlertFramesWindows
 {
-    class ModalDialogs
+    class ModalDialogs : SeleniumLib
     {
         public void Run()
         {
-            IWebDriver Driver = new ChromeDriver();
-
             try
             {
-                Driver.Manage().Window.Maximize();
+                StartBrowser("https://demoqa.com/modal-dialogs");
 
-                Driver.Navigate().GoToUrl("https://demoqa.com/modal-dialogs");
+                Sleep(3000);
 
-                Thread.Sleep(3000);
+                // Click On Small Btn
+                SimpleClick(By.Id("showSmallModal"));
 
-                IWebElement SmallModalBtn = Driver.FindElement(By.Id("showSmallModal"));
-                SmallModalBtn.Click();
+                Sleep(3000);
 
-                Thread.Sleep(3000);
+                // Close Small Modal
+                SimpleClick(By.XPath("//button[@id='closeSmallModal']"));
 
-                IWebElement CloseSmallModalBtn = Driver.FindElement(By.XPath("//button[@id='closeSmallModal']"));
-                CloseSmallModalBtn.Click();
+                Sleep(3000);
 
-                Thread.Sleep(3000);
+                // Click Large Modal
+                SimpleClick(By.Id("showLargeModal"));
 
-                IWebElement LargeModalBtn = Driver.FindElement(By.Id("showLargeModal"));
-                LargeModalBtn.Click();
+                Sleep(3000);
 
-                Thread.Sleep(3000);
+                // Close Large Modal
+                SimpleClick(By.XPath("//button[@id='closeLargeModal']"));
 
-                IWebElement LargeModalCloseBtn = Driver.FindElement(By.XPath("//button[@id='closeLargeModal']"));
-                LargeModalCloseBtn.Click();
+                Sleep(2000);
 
-                Thread.Sleep(2000);
-
-                _ = 0;
-
-                Driver.Close();
-                Driver.Quit();
+                CloseBrowser();
             }
             catch (System.Exception e)
             {
                 System.Console.WriteLine(e.Message);
-                Thread.Sleep(5000);
-                Driver.Close();
-                Driver.Quit();
+                Sleep(5000);
+
+                CloseBrowser();
             }
         }
     }

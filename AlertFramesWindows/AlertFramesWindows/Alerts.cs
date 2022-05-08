@@ -1,99 +1,87 @@
 ﻿using OpenQA.Selenium;
-using OpenQA.Selenium.Chrome;
-using System.Threading;
+using DqLib;
 
 namespace AlertFramesWindows
 {
-    class Alerts
+    class Alerts : SeleniumLib
     {
-        public void Run(bool Continue)
+        public void Run()
         {
-            IWebDriver Driver = new ChromeDriver();
-
             try
             {
-                Driver.Manage().Window.Maximize();
+                StartBrowser("https://demoqa.com/alerts");
 
-                Driver.Navigate().GoToUrl("https://demoqa.com/alerts");
-
-                Thread.Sleep(3000);
+                Sleep(3000);
 
                 SimpleAlert(Driver);
-                Thread.Sleep(1000);
+                Sleep(1000);
 
                 TimedAlert(Driver);
-                Thread.Sleep(1000);
+                Sleep(1000);
 
                 ConfirmAlert(Driver);
-                Thread.Sleep(1000);
+                Sleep(1000);
 
                 PromptAlert(Driver);
-                Thread.Sleep(1000);
+                Sleep(1000);
 
-                _ = 0;
-
-                Driver.Close();
-                Driver.Quit();
+                CloseBrowser();
             }
             catch (System.Exception e)
             {
                 System.Console.WriteLine(e.Message);
-                Thread.Sleep(5000);
-                Driver.Close();
-                Driver.Quit();
+                Sleep(5000);
+               
+                CloseBrowser();
             }
 
-            if (Continue)
-                new Frames().Run(Continue);
+            if (Prompt())
+                new Frames().Run();
         }
 
-        static void SimpleAlert(IWebDriver driver)
+        public void SimpleAlert(IWebDriver driver)
         {
-            IWebElement AlertBtn = driver.FindElement(By.Id("alertButton"));
-            AlertBtn.Click();
+            SimpleClick(By.Id("alertButton"));
 
-            Thread.Sleep(2000);
+            Sleep(2000);
 
             var AlertWin = driver.SwitchTo().Alert();
 
             AlertWin.Accept();
         }
 
-        static void TimedAlert(IWebDriver driver)
+        public void TimedAlert(IWebDriver driver)
         {
-            IWebElement AlertBtn = driver.FindElement(By.Id("timerAlertButton"));
-            AlertBtn.Click();
+            SimpleClick(By.Id("timerAlertButton"));
 
-            Thread.Sleep(6000);
+            Sleep(6000);
 
             var AlertWin = driver.SwitchTo().Alert();
             AlertWin.Accept();
         }
 
-        static void ConfirmAlert(IWebDriver driver)
+        public void ConfirmAlert(IWebDriver driver)
         {
-            IWebElement AlertBtn = driver.FindElement(By.Id("confirmButton"));
-            AlertBtn.Click();
+            SimpleClick(By.Id("confirmButton"));
 
-            Thread.Sleep(2000);
+            Sleep(2000);
 
             var AlertWin = driver.SwitchTo().Alert();
 
             AlertWin.Accept();
         }
 
-        static void PromptAlert(IWebDriver driver)
+        public void PromptAlert(IWebDriver driver)
         {
-            IWebElement AlertBtn = driver.FindElement(By.Id("promtButton"));
-            AlertBtn.Click();
+            SimpleClick(By.Id("promtButton"));
 
-            Thread.Sleep(2000);
+            Sleep(2000);
 
             var AlertWin = driver.SwitchTo().Alert();
 
             AlertWin.SendKeys("Hello World");
 
-            Thread.Sleep(2000);
+            Sleep(2000);
 
             AlertWin.Accept();
         }
