@@ -16,8 +16,6 @@ namespace Elements
             {
                 StartBrowser("https://demoqa.com/text-box");
 
-                StartBrowser("https://demoqa.com/text-box");
-
                 Sleep(1000);
 
                 TextInput(By.Id("userName"), FName);
