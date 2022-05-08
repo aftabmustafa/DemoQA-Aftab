@@ -12,7 +12,7 @@ namespace DqLib
     {
         public IWebDriver Driver;
         public IJavaScriptExecutor Js;
-        Actions actionProvider;
+        public Actions actionProvider;
 
         public void StartBrowser(string url)
         {
@@ -46,6 +46,24 @@ namespace DqLib
                 return true;
             else
                 return false;
+        }
+
+        public void CalendarKeyboardInput(By by,string input)
+        {
+            IWebElement CalInputBox = Driver.FindElement(by);
+            CalInputBox.Click();
+
+            Thread.Sleep(2000);
+
+            actionProvider.MoveToElement(Driver.FindElement(by))
+                          .KeyDown(Keys.Control)
+                          .SendKeys("a")
+                          .KeyUp(Keys.Control)
+                          .Perform();
+
+            CalInputBox.SendKeys(input);
+
+            CalInputBox.SendKeys(Keys.Escape);
         }
 
         public void TextInput(By by, string input)
@@ -83,6 +101,11 @@ namespace DqLib
         public void SimpleClick(By by)
         {
             Driver.FindElement(by).Click();
+        }
+
+        public void SimpleClick(IWebElement WebElement)
+        {
+            WebElement.Click();
         }
 
         public void JsClick(By by)
