@@ -26,3 +26,5 @@ D:\Learning\Selenium\Submission\ToolsQA Submission-Aftab-Mustafa\Forms\PracticeF
 D:\Learning\Selenium\Submission\ToolsQA Submission-Aftab-Mustafa\Forms\PracticeForm\obj\Debug\PracticeForm.csproj.CopyComplete
 D:\Learning\Selenium\Submission\ToolsQA Submission-Aftab-Mustafa\Forms\PracticeForm\obj\Debug\PracticeForm.exe
 D:\Learning\Selenium\Submission\ToolsQA Submission-Aftab-Mustafa\Forms\PracticeForm\obj\Debug\PracticeForm.pdb
+D:\Learning\Selenium\Submission\ToolsQA Submission-Aftab-Mustafa\Forms\PracticeForm\bin\Debug\DqLib.dll
+D:\Learning\Selenium\Submission\ToolsQA Submission-Aftab-Mustafa\Forms\PracticeForm\bin\Debug\DqLib.pdb
