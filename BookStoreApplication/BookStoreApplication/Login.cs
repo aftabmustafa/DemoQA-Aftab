@@ -1,46 +1,47 @@
 ﻿using OpenQA.Selenium;
-using OpenQA.Selenium.Chrome;
-using System.Threading;
+using DqLib;
 
 namespace BookStoreApplication
 {
-    class Login
+    class Login : SeleniumLib
     {
         static void Main(string[] args)
+        {
+            new Login().Run();
+        }
+
+        public void Run()
         {
             string username = "aria";
             string password = "@riaLabel2022";
 
-            IWebDriver Driver = new ChromeDriver();
+            StartBrowser("https://demoqa.com/login");
 
-            Driver.Manage().Window.Maximize();
+            Sleep(3000);
 
-            Driver.Navigate().GoToUrl("https://demoqa.com/login");
+            UserLogin(username, password);
 
-            Thread.Sleep(3000);
+            RedirectBookStore();
 
-            UserLogin(Driver, username, password);
-
-            RedirectBookStore(Driver);
-
-            Driver.Close();
-            Driver.Quit();
+            CloseBrowser();
         }
 
-        static void UserLogin(IWebDriver driver, string uName, string pass)
+        public void UserLogin(string uName, string pass)
         {
-            driver.FindElement(By.Id("userName")).SendKeys(uName);
-            driver.FindElement(By.Id("password")).SendKeys(pass);
+            TextInput(By.Id("userName"), uName);
 
-            Thread.Sleep(1000);
+            TextInput(By.Id("password"), pass);
 
-            driver.FindElement(By.Id("login")).Click();
-            Thread.Sleep(2500);
+            Sleep(1000);
+
+            SimpleClick(By.Id("login"));
+            
+            Sleep(2500);
         }
 
-        static void RedirectBookStore(IWebDriver driver)
+        static void RedirectBookStore()
         {
-            new BookStore().Home(driver);
+            new BookStore().Home();
         }
     }
 }

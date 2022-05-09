@@ -1,81 +1,81 @@
 ﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
-using System.Threading;
+using DqLib;
 
 namespace BookStoreApplication
 {
-    internal class BookStore
+    internal class BookStore : SeleniumLib
     {
-        public void Home(IWebDriver driver)
+        public void Home()
         {
-            driver = new ChromeDriver();
+            Driver = new ChromeDriver();
+            Driver.Navigate().GoToUrl("https://demoqa.com/books");
 
-            driver.Navigate().GoToUrl("https://demoqa.com/books");
+            SearchBook("Git");
+            AddBook();
 
-            SearchBook(driver, "Git");
-            AddBook(driver);
+            SearchBook("script");
+            AddBook();
 
-            SearchBook(driver, "script");
-            AddBook(driver);
+            NavigateProfile();
 
-            NavigateProfile(driver);
+            DeleteBooks();
 
-            DeleteBooks(driver);
-
-            Logout(driver);
+            Logout();
         }
 
-        private void SearchBook(IWebDriver driver, string BookName)
+        private void SearchBook(string BookName)
         {
-            driver.FindElement(By.XPath("//input[@id='searchBox']")).SendKeys(BookName);
-            Thread.Sleep(1000);
+            TextInput(By.XPath("//input[@id='searchBox']"), BookName);
+
+            Sleep(1000);
         }
 
-        private void AddBook(IWebDriver driver)
+        private void AddBook()
         {
-            var books = driver.FindElements(By.XPath("//div[@class='rt-tr-group']//span//a"));
+            var books = FindElements(By.XPath("//div[@class='rt-tr-group']//span//a"));
             books[0].Click();
-            Thread.Sleep(1000);
+            Sleep(1000);
 
-            driver.FindElement(By.XPath("//button[text()='Add To Your Collection']")).Click();
-            Thread.Sleep(1000);
+            SimpleClick(By.XPath("//button[text()='Add To Your Collection']"));
+            Sleep(1000);
 
-            driver.SwitchTo().Alert().Accept();
-            driver.SwitchTo().DefaultContent();
+            Driver.SwitchTo().Alert().Accept();
+            Driver.SwitchTo().DefaultContent();
 
-            Thread.Sleep(1000);
+            Sleep(1000);
 
-            driver.FindElement(By.XPath("//button[text()='Back To Book Store']")).Click();
-            Thread.Sleep(1000);
+            SimpleClick(By.XPath("//button[text()='Back To Book Store']"));
+            Sleep(1000);
         }
 
-        private void NavigateProfile(IWebDriver driver)
+        private void NavigateProfile()
         {
-            driver.Navigate().GoToUrl("https://demoqa.com/profile");
-            Thread.Sleep(2000);
+            Driver.Navigate().GoToUrl("https://demoqa.com/profile");
+            Sleep(2000);
         }
 
-        private void DeleteBooks(IWebDriver driver)
+        private void DeleteBooks()
         {
-            driver.FindElement(By.XPath("//div[contains(@class,'text-right')]//button[text()='Delete All Books']")).Click();
+            SimpleClick(By.XPath("//div[contains(@class,'text-right')]//button[text()='Delete All Books']"));
 
-            Thread.Sleep(1000);
+            Sleep(1000);
 
-            driver.SwitchTo().ActiveElement();
+            Driver.SwitchTo().ActiveElement();
 
-            Thread.Sleep(1000);
+            Sleep(1000);
 
-            driver.FindElement(By.Id("closeSmallModal-ok")).Click();
+            SimpleClick(By.Id("closeSmallModal-ok"));
 
-            Thread.Sleep(1000);
+            Sleep(1000);
 
-            driver.SwitchTo().Alert().Accept();
+            Driver.SwitchTo().Alert().Accept();
         }
 
-        private void Logout(IWebDriver driver)
+        private void Logout()
         {
-            driver.FindElement(By.XPath("//div[contains(@class,'text-right')]//button[text()='Log out']")).Click();
-            Thread.Sleep(3000);
+            SimpleClick(By.XPath("//div[contains(@class,'text-right')]//button[text()='Log out']"));
+            Sleep(3000);
         }
     }
 }
