@@ -1,50 +1,41 @@
 ﻿using OpenQA.Selenium;
-using OpenQA.Selenium.Chrome;
-using OpenQA.Selenium.Interactions;
-using System.Threading;
+using DqLib;
 
 namespace Widgets
 {
-    class Slider
+    class Slider : SeleniumLib
     {
-        public void Run(bool Continue)
+        public void Run()
         {
-            IWebDriver Driver = new ChromeDriver();
-            Actions action = new Actions(Driver);
-
             try
             {
-                Driver.Manage().Window.Maximize();
+                StartBrowser("https://demoqa.com/slider");
 
-                Driver.Navigate().GoToUrl("https://demoqa.com/slider");
+                Sleep(3000);
 
-                Thread.Sleep(3000);
+                IWebElement InputSlider = FindElement(By.XPath("//input[contains(@class, 'range-slider')]"));
+                actionProvider.MoveToElement(InputSlider)
+                              .ClickAndHold()
+                              .MoveByOffset(08, 0)
+                              .MoveByOffset(-6, 0)
+                              .MoveByOffset(-18, 0)
+                              .MoveByOffset(16, 0)
+                              .MoveByOffset(20, 0)
+                              .Build()
+                              .Perform();
 
-                IWebElement InputSlider = Driver.FindElement(By.XPath("//input[contains(@class, 'range-slider')]"));
-                action.MoveToElement(InputSlider)
-                      .ClickAndHold()
-                      .MoveByOffset(08, 0)
-                      .MoveByOffset(-6, 0)
-                      .MoveByOffset(-18, 0)
-                      .MoveByOffset(16, 0)
-                      .MoveByOffset(20, 0)
-                      .Build()
-                      .Perform();
-
-                Driver.Close();
-                Driver.Quit();
+                CloseBrowser();
             }
             catch(System.Exception e)
             {
                 System.Console.WriteLine(e.Message);
-                Thread.Sleep(5000);
+                Sleep(5000);
 
-                Driver.Close();
-                Driver.Quit();
+                CloseBrowser();
             }
 
-            if (Continue)
-                new ProgressBar().Run(Continue);
+            if (Prompt())
+                new ProgressBar().Run();
         }
     }
 }

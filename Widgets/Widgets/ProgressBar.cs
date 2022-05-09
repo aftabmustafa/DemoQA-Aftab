@@ -1,45 +1,38 @@
 ﻿using OpenQA.Selenium;
-using OpenQA.Selenium.Chrome;
-using System.Threading;
+using DqLib;
 
 namespace Widgets
 {
-    class ProgressBar
+    class ProgressBar : SeleniumLib
     {
-        public void Run(bool Continue)
+        public void Run()
         {
-            IWebDriver Driver = new ChromeDriver();
-
             try
             {
-                Driver.Manage().Window.Maximize();
+                StartBrowser("https://demoqa.com/progress-bar");
 
-                Driver.Navigate().GoToUrl("https://demoqa.com/progress-bar");
+                Sleep(3000);
 
-                Thread.Sleep(3000);
-
-                var ProgressControlBtn = Driver.FindElement(By.Id("startStopButton"));
+                var ProgressControlBtn = FindElement(By.Id("startStopButton"));
 
                 ProgressControlBtn.Click();
 
-                Thread.Sleep(new System.Random().Next(3, 8) * 1000);
+                Sleep(new System.Random().Next(3, 8) * 1000);
 
                 ProgressControlBtn.Click();
 
-                Driver.Close();
-                Driver.Quit();
+                CloseBrowser();
             }
             catch(System.Exception e)
             {
                 System.Console.WriteLine(e.Message);
-                Thread.Sleep(5000);
+                Sleep(5000);
 
-                Driver.Close();
-                Driver.Quit();
+                CloseBrowser();
             }
 
-            if (Continue)
-                new Tabs().Run(Continue);
+            if (Prompt())
+                new Tabs().Run();
         }
     }
 }

@@ -1,62 +1,52 @@
 ﻿using OpenQA.Selenium;
-using OpenQA.Selenium.Chrome;
-using OpenQA.Selenium.Interactions;
-using System.Threading;
-
+using DqLib;
 
 namespace Widgets
 {
-    class Menu
+    class Menu : SeleniumLib
     {
-        public void Run(bool Continue)
+        public void Run()
         {
-            IWebDriver Driver = new ChromeDriver();
-            Actions action = new Actions(Driver);
-
             try
             {
-                Driver.Manage().Window.Maximize();
+                StartBrowser("https://demoqa.com/menu");
 
-                Driver.Navigate().GoToUrl("https://demoqa.com/menu");
+                Sleep(3000);
 
-                Thread.Sleep(3000);
+                IWebElement MainItem1 = FindElement(By.XPath("//a[text()='Main Item 1']"));
+                actionProvider.MoveToElement(MainItem1);
 
-                IWebElement MainItem1 = Driver.FindElement(By.XPath("//a[text()='Main Item 1']"));
-                action.MoveToElement(MainItem1);
+                Sleep(2000);
 
-                Thread.Sleep(2000);
+                IWebElement MainItem2 = FindElement(By.XPath("//a[text()='Main Item 2']"));
+                actionProvider.MoveToElement(MainItem2);
 
-                IWebElement MainItem2 = Driver.FindElement(By.XPath("//a[text()='Main Item 2']"));
-                action.MoveToElement(MainItem2);
+                Sleep(2000);
 
-                Thread.Sleep(2000);
+                IWebElement MainItem2__SubItem = FindElement(By.XPath("//a[text()='SUB SUB LIST »']"));
+                actionProvider.MoveToElement(MainItem2__SubItem);
 
-                IWebElement MainItem2__SubItem = Driver.FindElement(By.XPath("//a[text()='SUB SUB LIST »']"));
-                action.MoveToElement(MainItem2__SubItem);
+                Sleep(2000);
 
-                Thread.Sleep(2000);
+                IWebElement SubSubItem1 = FindElement(By.XPath("//a[text()='Sub Sub Item 1']"));
+                actionProvider.MoveToElement(SubSubItem1);
 
-                IWebElement SubSubItem1 = Driver.FindElement(By.XPath("//a[text()='Sub Sub Item 1']"));
-                action.MoveToElement(SubSubItem1);
+                Sleep(2000);
 
-                Thread.Sleep(2000);
+                IWebElement SubSubItem2 = FindElement(By.XPath("//a[text()='Sub Sub Item 2']"));
+                actionProvider.MoveToElement(SubSubItem2);
 
-                IWebElement SubSubItem2 = Driver.FindElement(By.XPath("//a[text()='Sub Sub Item 2']"));
-                action.MoveToElement(SubSubItem2);
-
-                Driver.Close();
-                Driver.Quit();
+                CloseBrowser();
             }
             catch(System.Exception e)
             {
                 System.Console.WriteLine(e.Message);
-                Thread.Sleep(5000);
+                Sleep(5000);
 
-                Driver.Close();
-                Driver.Quit();
+                CloseBrowser();
             }
 
-            if (Continue)
+            if (Prompt())
                 new SelectMenu().Run();
         }
     }

@@ -1,52 +1,42 @@
 ﻿using OpenQA.Selenium;
-using OpenQA.Selenium.Chrome;
-using System.Threading;
+using DqLib;
 
 namespace Widgets
 {
-    class Tabs
+    class Tabs : SeleniumLib
     {
-        public void Run(bool Continue)
+        public void Run()
         {
-            IWebDriver Driver = new ChromeDriver();
-
             try
             {
-                Driver.Manage().Window.Maximize();
+                StartBrowser("https://demoqa.com/tabs");
 
-                Driver.Navigate().GoToUrl("https://demoqa.com/tabs");
+                Sleep(3000);
 
-                Thread.Sleep(3000);
+                SimpleClick(By.Id("demo-tab-origin"));
 
-                IWebElement OriginTab = Driver.FindElement(By.Id("demo-tab-origin"));
-                OriginTab.Click();
+                Sleep(2000);
 
-                Thread.Sleep(2000);
+                SimpleClick(By.Id("demo-tab-use"));
 
-                IWebElement UseTab = Driver.FindElement(By.Id("demo-tab-use"));
-                UseTab.Click();
+                Sleep(2000);
 
-                Thread.Sleep(2000);
+                SimpleClick(By.Id("demo-tab-what"));
 
-                IWebElement WhatTab = Driver.FindElement(By.Id("demo-tab-what"));
-                WhatTab.Click();
+                Sleep(2000);
 
-                Thread.Sleep(2000);
-
-                Driver.Close();
-                Driver.Quit();
+                CloseBrowser();
             }
-            catch(System.Exception e)
+            catch (System.Exception e)
             {
                 System.Console.WriteLine(e.Message);
-                Thread.Sleep(5000);
+                Sleep(5000);
 
-                Driver.Close();
-                Driver.Quit();
+                CloseBrowser();
             }
 
-            if (Continue)
-                new ToolTips().Run(Continue);
+            if (Prompt())
+                new ToolTips().Run();
         }
     }
 }

@@ -1,99 +1,82 @@
 ﻿using OpenQA.Selenium;
-using OpenQA.Selenium.Chrome;
-using OpenQA.Selenium.Interactions;
-using System.Threading;
+using DqLib;
 
 namespace Widgets
 {
-    class SelectMenu
+    class SelectMenu : SeleniumLib
     {
         public void Run()
         {
-            IWebDriver Driver = new ChromeDriver();
-
             try
             {
-                Driver.Manage().Window.Maximize();
+                StartBrowser("https://demoqa.com/select-menu");
 
-                Driver.Navigate().GoToUrl("https://demoqa.com/select-menu");
+                Sleep(3000);
 
-                Thread.Sleep(3000);
+                SelectValue();
 
-                SelectValue(Driver);
+                SelectOne();
 
-                SelectOne(Driver);
+                SelectOldStyle();
 
-                SelectOldStyle(Driver);
+                MultiselectDropDown();
 
-                MultiselectDropDown(Driver);
+                StandardMultiSelect();
 
-                StandardMultiSelect(Driver);
-
-                Driver.Close();
-                Driver.Quit();
+                CloseBrowser();
             }
             catch (System.Exception e)
             {
                 System.Console.WriteLine(e.Message);
-                Thread.Sleep(5000);
+                Sleep(5000);
 
-                Driver.Close();
-                Driver.Quit();
+                CloseBrowser();
             }
         }
 
-        static void SelectValue(IWebDriver driver)
+        public void SelectValue()
         {
-            driver.FindElement(By.XPath("//div[text()='Select Option']"))
-               .Click();
+            SimpleClick(By.XPath("//div[text()='Select Option']"));
 
-            Thread.Sleep(500);
+            Sleep(500);
 
-            driver.FindElement(By.XPath("//input[@id='react-select-2-input']"))
-                .SendKeys(Keys.ArrowDown + Keys.ArrowDown + Keys.ArrowDown + Keys.ArrowDown + Keys.ArrowDown + Keys.Enter);
+            Driver.FindElement(By.XPath("//input[@id='react-select-2-input']"))
+                  .SendKeys(Keys.ArrowDown + Keys.ArrowDown + Keys.ArrowDown + Keys.ArrowDown + Keys.ArrowDown + Keys.Enter);
         }
 
-        static void SelectOne(IWebDriver driver)
+        public void SelectOne()
         {
-            driver.FindElement(By.XPath("//div[text()='Select Title']"))
-                .Click();
+            SimpleClick(By.XPath("//div[text()='Select Title']"));
 
-            Thread.Sleep(500);
+            Sleep(500);
 
-            driver.FindElement(By.XPath("//input[@id='react-select-3-input']"))
-                .SendKeys(Keys.ArrowDown + Keys.ArrowDown + Keys.ArrowDown + Keys.ArrowDown + Keys.ArrowDown + Keys.Enter);
+            Driver.FindElement(By.XPath("//input[@id='react-select-3-input']"))
+                  .SendKeys(Keys.ArrowDown + Keys.ArrowDown + Keys.ArrowDown + Keys.ArrowDown + Keys.ArrowDown + Keys.Enter);
         }
 
-        static void SelectOldStyle(IWebDriver driver)
+        public void SelectOldStyle()
         {
-            IWebElement OldStyleMenu = driver.FindElement(By.Id("oldSelectMenu"));
+            IWebElement OldStyleMenu = FindElement(By.Id("oldSelectMenu"));
             OldStyleMenu.Click();
             OldStyleMenu.SendKeys(Keys.ArrowDown + Keys.ArrowDown + Keys.Enter);
         }
 
-        static void MultiselectDropDown(IWebDriver driver)
+        public void MultiselectDropDown()
         {
-            IWebElement MultiSelectMenu = driver.FindElement(By.XPath("//div[text()='Select...']"));
-            MultiSelectMenu.Click();
+            SimpleClick(By.XPath("//div[text()='Select...']"));
 
-            driver.FindElement(By.XPath("//input[@id='react-select-4-input']"))
-                .SendKeys(Keys.ArrowDown + Keys.Enter + Keys.ArrowDown + Keys.Enter + Keys.ArrowDown + Keys.Enter + Keys.ArrowDown + Keys.Enter);
+            Driver.FindElement(By.XPath("//input[@id='react-select-4-input']"))
+                  .SendKeys(Keys.ArrowDown + Keys.Enter + Keys.ArrowDown + Keys.Enter + Keys.ArrowDown + Keys.Enter + Keys.ArrowDown + Keys.Enter);
         }
 
-        static void StandardMultiSelect(IWebDriver driver)
+        public void StandardMultiSelect()
         {
-
-            IWebElement MultiSelectText = driver.FindElement(By.Id("cars"));
-
-            Actions actions = new Actions(driver);
-
-            actions.KeyDown(Keys.LeftControl)
-                .MoveToElement(driver.FindElements(By.XPath("//select[@id='cars']//option"))[1])
+            actionProvider.KeyDown(Keys.LeftControl)
+                .MoveToElement(Driver.FindElements(By.XPath("//select[@id='cars']//option"))[1])
                 .Click()
-                .MoveToElement(driver.FindElements(By.XPath("//select[@id='cars']//option"))[0])
+                .MoveToElement(Driver.FindElements(By.XPath("//select[@id='cars']//option"))[0])
                 .Click()
                 .Release().Build().Perform();
         }
-
     }
 }

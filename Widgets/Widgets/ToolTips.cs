@@ -1,54 +1,45 @@
 ﻿using OpenQA.Selenium;
-using OpenQA.Selenium.Chrome;
-using OpenQA.Selenium.Interactions;
-using System.Threading;
+using DqLib;
 
 namespace Widgets
 {
-    class ToolTips
+    class ToolTips : SeleniumLib
     {
-        public void Run(bool Continue)
+        public void Run()
         {
-            IWebDriver Driver = new ChromeDriver();
-            Actions action = new Actions(Driver);
-
             try
             {
-                Driver.Manage().Window.Maximize();
+                StartBrowser("https://demoqa.com/tool-tips");
 
-                Driver.Navigate().GoToUrl("https://demoqa.com/tool-tips");
+                Sleep(6000);
 
-                Thread.Sleep(6000);
+                IWebElement HoverBtn = FindElement(By.Id("toolTipButton"));
+                actionProvider.MoveToElement(HoverBtn).Perform();
+                Sleep(2000);
 
-                IWebElement HoverBtn = Driver.FindElement(By.Id("toolTipButton"));
-                action.MoveToElement(HoverBtn).Perform();
-                Thread.Sleep(2000);
+                IWebElement InputBoxHover = FindElement(By.Id("toolTipTextField"));
+                actionProvider.MoveToElement(InputBoxHover).Perform();
+                Sleep(2000);
 
-                IWebElement InputBoxHover = Driver.FindElement(By.Id("toolTipTextField"));
-                action.MoveToElement(InputBoxHover).Perform();
-                Thread.Sleep(2000);
+                IWebElement AnchorHover = FindElement(By.XPath("//a[text()='Contrary']"));
+                actionProvider.MoveToElement(AnchorHover).Perform();
+                Sleep(2000);
 
-                IWebElement AnchorHover = Driver.FindElement(By.XPath("//a[text()='Contrary']"));
-                action.MoveToElement(AnchorHover).Perform();
-                Thread.Sleep(2000);
+                IWebElement DateHover = FindElement(By.XPath("//a[text()='1.10.32']"));
+                actionProvider.MoveToElement(DateHover).Perform();
 
-                IWebElement DateHover = Driver.FindElement(By.XPath("//a[text()='1.10.32']"));
-                action.MoveToElement(DateHover).Perform();
-
-                Driver.Close();
-                Driver.Quit();
+                CloseBrowser();
             }
             catch(System.Exception e)
             {
                 System.Console.WriteLine(e.Message);
-                Thread.Sleep(5000);
+                Sleep(5000);
 
-                Driver.Close();
-                Driver.Quit();
+                CloseBrowser();
             }
 
-            if (Continue)
-                new Menu().Run(Continue);
+            if (Prompt())
+                new Menu().Run();
         }
     }
 }

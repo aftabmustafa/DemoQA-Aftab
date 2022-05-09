@@ -1,66 +1,59 @@
 ﻿using OpenQA.Selenium;
-using OpenQA.Selenium.Chrome;
-using System.Threading;
+using DqLib;
 
 namespace Widgets
 {
-    class AutoComplete
+    class AutoComplete : SeleniumLib
     {
-        public void Run(bool Continue)
+        public void Run()
         {
-            IWebDriver Driver = new ChromeDriver();
-
             try
             {
-                Driver.Manage().Window.Maximize();
+                StartBrowser("https://demoqa.com/auto-complete");
 
-                Driver.Navigate().GoToUrl("https://demoqa.com/auto-complete");
+                Sleep(3000);
 
-                Thread.Sleep(3000);
+                TestMultiple();
 
-                TestMultiple(Driver);
+                TestSingle();
 
-                TestSingle(Driver);
-
-                Driver.Close();
-                Driver.Quit();
+                CloseBrowser();
             }
             catch (System.Exception e)
             {
                 System.Console.WriteLine(e.Message);
-                Thread.Sleep(5000);
+                Sleep(5000);
 
-                Driver.Close();
-                Driver.Quit();
+                CloseBrowser();
             }
 
-            if (Continue)
-                new DatePicker().Run(Continue);
+            if (Prompt())
+                new DatePicker().Run();
         }
         
-        static void TestMultiple(IWebDriver driver)
+        public void TestMultiple()
         {
-            IWebElement InputBox = driver.FindElement(By.Id("autoCompleteMultipleInput"));
+            IWebElement InputBox = FindElement(By.Id("autoCompleteMultipleInput"));
 
             InputBox.SendKeys("ee");
-            Thread.Sleep(1000);
+            Sleep(1000);
             InputBox.SendKeys(Keys.Enter);
 
             InputBox.SendKeys("Bl");
-            Thread.Sleep(500);
+            Sleep(500);
 
             InputBox.SendKeys(Keys.ArrowDown);
-            Thread.Sleep(1000);
+            Sleep(1000);
 
             InputBox.SendKeys(Keys.Enter);
         }
 
-        static void TestSingle(IWebDriver driver)
+        public void TestSingle()
         {
-            IWebElement InputBox = driver.FindElement(By.Id("autoCompleteSingleInput"));
+            IWebElement InputBox = FindElement(By.Id("autoCompleteSingleInput"));
 
             InputBox.SendKeys("ee");
-            Thread.Sleep(1000);
+            Sleep(1000);
             InputBox.SendKeys(Keys.Enter);
         }
 

@@ -4,8 +4,7 @@
     {
         static void Main(string[] args)
         {
-            bool ContinueTest = true;
-            new Accordian().Run(ContinueTest);
+            new Accordian().Run();
         }
     }
 }

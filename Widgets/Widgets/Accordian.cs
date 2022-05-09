@@ -1,52 +1,49 @@
 ﻿using OpenQA.Selenium;
-using OpenQA.Selenium.Chrome;
-using System.Threading;
+using DqLib;
 
 namespace Widgets
 {
-    class Accordian
+    class Accordian : SeleniumLib
     {
-        public void Run(bool Continue)
+        public void Run()
         {
-            IWebDriver Driver = new ChromeDriver();
-
             try
             {
-                Driver.Manage().Window.Maximize();
+                StartBrowser("https://demoqa.com/accordian");
 
-                Driver.Navigate().GoToUrl("https://demoqa.com/accordian");
+                Sleep(3000);
 
-                Thread.Sleep(3000);
+                // Toggle Seaction 1 Heading Start
+                SimpleClick(By.Id("section1Heading"));
 
-                IWebElement Heading1 = Driver.FindElement(By.Id("section1Heading"));
-                Heading1.Click();
+                Sleep(3000);
 
-                Thread.Sleep(3000);
-                Heading1.Click();
+                SimpleClick(By.Id("section1Heading"));
 
-                IWebElement Heading2 = Driver.FindElement(By.Id("section2Heading"));
-                Heading2.Click();
+                // Toggle Seaction 1 Heading End
 
-                Thread.Sleep(3000);
+                Sleep(2000);
 
-                IWebElement Heading3 = Driver.FindElement(By.Id("section3Heading"));
-                Heading3.Click();
+                SimpleClick(By.Id("section2Heading"));
 
-                Thread.Sleep(3000);
+                Sleep(2000);
 
-                Driver.Close();
-                Driver.Quit();
+                SimpleClick(By.Id("section3Heading"));
+
+                Sleep(3000);
+
+                CloseBrowser();
             }
             catch (System.Exception e)
             {
                 System.Console.WriteLine(e.Message);
-                Thread.Sleep(5000);
-                Driver.Close();
-                Driver.Quit();
+                Sleep(5000);
+
+                CloseBrowser();
             }
 
-            if (Continue)
-                new AutoComplete().Run(Continue);
+            if (Prompt())
+                new AutoComplete().Run();
         }
     }
 }
