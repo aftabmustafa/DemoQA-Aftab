@@ -1,113 +1,104 @@
 ﻿using OpenQA.Selenium;
-using OpenQA.Selenium.Chrome;
-using OpenQA.Selenium.Interactions;
-using System.Threading;
+using DqLib;
 
 namespace Interactions
 {
-    class Selectable
+    class Selectable : SeleniumLib
     {
-        public void Run(bool Continue)
+        public void Run()
         {
-            IWebDriver Driver = new ChromeDriver();
-            Actions actionProvider = new Actions(Driver);
-
             try
             {
-                Driver.Manage().Window.Maximize();
+                StartBrowser("https://demoqa.com/sortable");
 
-                Driver.Navigate().GoToUrl("https://demoqa.com/sortable");
+                Sleep(3000);
 
-                Thread.Sleep(3000);
+                //TestList();
 
-                //TestList(Driver, actionProvider);
+                TestGrid();
 
-                TestGrid(Driver, actionProvider);
-
-                Driver.Close();
-                Driver.Quit();
+                CloseBrowser();
             }
             catch (System.Exception e)
             {
                 System.Console.WriteLine(e.Message);
 
-                Thread.Sleep(5000);
+                Sleep(5000);
 
-                Driver.Close();
-                Driver.Quit();
+                CloseBrowser();
             }
 
-            if (Continue)
-                new Resizable().Run(Continue);
+            if (Prompt())
+                new Resizable().Run();
         }
 
-        static void TestList(IWebDriver driver, Actions action)
+        public void TestList()
         {
-            var ListItems = driver.FindElements(By.XPath("//div[@id='demo-tabpane-list']//li[contains(@class,'list-group-item')]"));
+            var ListItems = FindElements(By.XPath("//div[@id='demo-tabpane-list']//li[contains(@class,'list-group-item')]"));
 
-            action.MoveToElement(ListItems[0])
-                  .Click()
-                  .MoveToElement(ListItems[1])
-                  .Click()
-                  .MoveToElement(ListItems[2])
-                  .Click()
-                  .MoveToElement(ListItems[3])
-                  .Click()
-                  .MoveToElement(ListItems[0])
-                  .Click()
-                  .MoveToElement(ListItems[1])
-                  .Click()
-                  .MoveToElement(ListItems[2])
-                  .Click()
-                  .MoveToElement(ListItems[3])
-                  .Click()
-                  .Release()
-                  .Build()
-                  .Perform();
+            actionProvider.MoveToElement(ListItems[0])
+                          .Click()
+                          .MoveToElement(ListItems[1])
+                          .Click()
+                          .MoveToElement(ListItems[2])
+                          .Click()
+                          .MoveToElement(ListItems[3])
+                          .Click()
+                          .MoveToElement(ListItems[0])
+                          .Click()
+                          .MoveToElement(ListItems[1])
+                          .Click()
+                          .MoveToElement(ListItems[2])
+                          .Click()
+                          .MoveToElement(ListItems[3])
+                          .Click()
+                          .Release()
+                          .Build()
+                          .Perform();
 
         }
 
-        static void TestGrid(IWebDriver driver, Actions action)
+        public void TestGrid()
         {
-            IWebElement ClickGridTab = driver.FindElement(By.Id("demo-tab-grid"));
+            SimpleClick(By.Id("demo-tab-grid"));
 
-            var GridItems = driver.FindElements(By.XPath("//div[@id='demo-tabpane-grid']//li[contains(@class,'list-group-item')]"));
+            var GridItems = FindElements(By.XPath("//div[@id='demo-tabpane-grid']//li[contains(@class,'list-group-item')]"));
 
-            action.MoveToElement(GridItems[0])
-                  .Click()
-                  .MoveToElement(GridItems[3])
-                  .Click()
-                  .MoveToElement(GridItems[4])
-                  .Click()
-                  .MoveToElement(GridItems[5])
-                  .Click()
-                  .MoveToElement(GridItems[8])
-                  .Click()
-                  .MoveToElement(GridItems[6])
-                  .Click()
-                  .MoveToElement(GridItems[2])
-                  .Click()
-                  .MoveToElement(GridItems[1])
-                  .Click()
-                  .MoveToElement(GridItems[0])
-                  .Click()
-                  .MoveToElement(GridItems[3])
-                  .Click()
-                  .MoveToElement(GridItems[4])
-                  .Click()
-                  .MoveToElement(GridItems[5])
-                  .Click()
-                  .MoveToElement(GridItems[8])
-                  .Click()
-                  .MoveToElement(GridItems[6])
-                  .Click()
-                  .MoveToElement(GridItems[2])
-                  .Click()
-                  .MoveToElement(GridItems[1])
-                  .Click()
-                  .Release()
-                  .Build()
-                  .Perform();
+            actionProvider.MoveToElement(GridItems[0])
+                          .Click()
+                          .MoveToElement(GridItems[3])
+                          .Click()
+                          .MoveToElement(GridItems[4])
+                          .Click()
+                          .MoveToElement(GridItems[5])
+                          .Click()
+                          .MoveToElement(GridItems[8])
+                          .Click()
+                          .MoveToElement(GridItems[6])
+                          .Click()
+                          .MoveToElement(GridItems[2])
+                          .Click()
+                          .MoveToElement(GridItems[1])
+                          .Click()
+                          .MoveToElement(GridItems[0])
+                          .Click()
+                          .MoveToElement(GridItems[3])
+                          .Click()
+                          .MoveToElement(GridItems[4])
+                          .Click()
+                          .MoveToElement(GridItems[5])
+                          .Click()
+                          .MoveToElement(GridItems[8])
+                          .Click()
+                          .MoveToElement(GridItems[6])
+                          .Click()
+                          .MoveToElement(GridItems[2])
+                          .Click()
+                          .MoveToElement(GridItems[1])
+                          .Click()
+                          .Release()
+                          .Build()
+                          .Perform();
         }
     }
 }

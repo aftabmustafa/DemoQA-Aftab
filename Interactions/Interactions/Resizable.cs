@@ -1,81 +1,67 @@
 ﻿using OpenQA.Selenium;
-using OpenQA.Selenium.Chrome;
-using OpenQA.Selenium.Interactions;
-using System.Threading;
+using DqLib;
 
 namespace Interactions
 {
-    class Resizable
+    class Resizable : SeleniumLib
     {
-        public void Run(bool Continue)
+        public void Run()
         {
-            IWebDriver Driver = new ChromeDriver();
-            Actions actionProvider = new Actions(Driver);
-
             try
             {
-                Driver.Manage().Window.Maximize();
+                StartBrowser("https://demoqa.com/sortable");
 
-                Driver.Navigate().GoToUrl("https://demoqa.com/sortable");
-
-                Thread.Sleep(3000);
+                Sleep(3000);
 
                 //ConstraintBox(Driver, actionProvider);
 
-                FreeBox(Driver, actionProvider);
+                FreeBox();
 
-                _ = 0;
-
-                Driver.Close();
-                Driver.Quit();
+                CloseBrowser();
             }
             catch (System.Exception e)
             {
                 System.Console.WriteLine(e.Message);
 
-                Thread.Sleep(5000);
+                Sleep(5000);
 
-                Driver.Close();
-                Driver.Quit();
+                CloseBrowser();
             }
 
-            if (Continue)
-                new Droppable().Run(Continue);
-        }
-        static void ConstraintBox(IWebDriver driver, Actions action)
-        {
-            var RegularBox = driver.FindElement(By.XPath("//div[@id='resizableBoxWithRestriction']//span[contains(@class,'react-resizable-handle')]"));
-
-            action.MoveToElement(RegularBox)
-                .ClickAndHold()
-                .MoveByOffset(300, 300)
-                .MoveByOffset(-450, -450)
-                .MoveByOffset(100, 200)
-                .MoveByOffset(200, 100)
-                .Release()
-                .Build()
-                .Perform();
+            if (Prompt())
+                new Droppable().Run();
         }
 
-        static void FreeBox(IWebDriver driver, Actions action)
+        public void ConstraintBox()
         {
-            var RegularBox = driver.FindElement(By.XPath("//div[@id='resizable']//span[contains(@class,'react-resizable-handle')]"));
+            var RegularBox = FindElement(By.XPath("//div[@id='resizableBoxWithRestriction']//span[contains(@class,'react-resizable-handle')]"));
 
-            IJavaScriptExecutor js = (IJavaScriptExecutor)driver;
+            actionProvider.MoveToElement(RegularBox)
+                          .ClickAndHold()
+                          .MoveByOffset(300, 300)
+                          .MoveByOffset(-450, -450)
+                          .MoveByOffset(100, 200)
+                          .MoveByOffset(200, 100)
+                          .Release()
+                          .Build()
+                          .Perform();
+        }
 
-            js.ExecuteScript("window.scrollBy(0, 600)");
+        public void FreeBox()
+        {
+            var RegularBox = FindElement(By.XPath("//div[@id='resizable']//span[contains(@class,'react-resizable-handle')]"));
 
-            action.MoveToElement(RegularBox)
-                .ClickAndHold()
-                .MoveByOffset(200, 200)
-                .MoveByOffset(-200, 200)
-                .MoveByOffset(100, 100)
-                .MoveByOffset(200, 200)
-                .Release()
-                .Build()
-                .Perform();
+            Scroll(0, 600);
 
-
+            actionProvider.MoveToElement(RegularBox)
+                          .ClickAndHold()
+                          .MoveByOffset(200, 200)
+                          .MoveByOffset(-200, 200)
+                          .MoveByOffset(100, 100)
+                          .MoveByOffset(200, 200)
+                          .Release()
+                          .Build()
+                          .Perform();
         }
     }
 }

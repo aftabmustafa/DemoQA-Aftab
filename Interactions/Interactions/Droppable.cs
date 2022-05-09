@@ -1,148 +1,134 @@
 ﻿using OpenQA.Selenium;
-using OpenQA.Selenium.Chrome;
-using OpenQA.Selenium.Interactions;
-using System.Threading;
+using DqLib;
 
 namespace Interactions
 {
-    class Droppable
+    class Droppable : SeleniumLib
     {
-        public void Run(bool Continue)
+        public void Run()
         {
-            IWebDriver Driver = new ChromeDriver();
-            Actions actionProvider = new Actions(Driver);
-
             try
             {
-                Driver.Manage().Window.Maximize();
+                StartBrowser("https://demoqa.com/droppable");
 
-                Driver.Navigate().GoToUrl("https://demoqa.com/droppable");
+                Sleep(3000);
 
-                Thread.Sleep(3000);
+                TestSimpleDroppable();
+                Sleep(2000);
 
-                TestSimpleDroppable(Driver, actionProvider);
-                Thread.Sleep(2000);
+                TestAccept();
+                Sleep(2000);
 
-                TestAccept(Driver, actionProvider);
-                Thread.Sleep(2000);
+                PreventPropogation();
+                Sleep(2000);
 
-                PreventPropogation(Driver, actionProvider);
-                Thread.Sleep(2000);
+                SwitchToRevert();
+                Sleep(2000);
 
-                SwitchToRevert(Driver, actionProvider);
-                Thread.Sleep(2000);
-
-                Driver.Close();
-                Driver.Quit();
+                CloseBrowser();
             }
             catch (System.Exception e)
             {
                 System.Console.WriteLine(e.Message);
 
-                Thread.Sleep(5000);
+                Sleep(5000);
 
-                Driver.Close();
-                Driver.Quit();
+                CloseBrowser();
             }
 
-            if (Continue)
+            if (Prompt())
                 new Dragabble().Run();
         }
 
-        static void TestSimpleDroppable(IWebDriver driver, Actions action)
+        public void TestSimpleDroppable()
         {
-            var DragElement = driver.FindElement(By.XPath("//div[@id='simpleDropContainer']//div[@id='draggable']"));
+            var DragElement = FindElement(By.XPath("//div[@id='simpleDropContainer']//div[@id='draggable']"));
 
-            var DropBoxElement = driver.FindElement(By.XPath("//div[@id='simpleDropContainer']//div[@id='droppable']"));
+            var DropBoxElement = FindElement(By.XPath("//div[@id='simpleDropContainer']//div[@id='droppable']"));
 
-            action.MoveToElement(DragElement)
-                .ClickAndHold()
-                .MoveToElement(DropBoxElement)
-                .Release()
-                .Build()
-                .Perform();
+            actionProvider.MoveToElement(DragElement)
+                          .ClickAndHold()
+                          .MoveToElement(DropBoxElement)
+                          .Release()
+                          .Build()
+                          .Perform();
         }
 
-        static void TestAccept(IWebDriver driver, Actions action)
+        public void TestAccept()
         {
-            IWebElement ClickAcceptTab = driver.FindElement(By.Id("droppableExample-tab-accept"));
-            ClickAcceptTab.Click();
+            SimpleClick(By.Id("droppableExample-tab-accept"));
 
-            //IWebElement ParentElement = driver.FindElement(By.XPath("//div;[@id='acceptDropContainer']"));
+            IWebElement ParentElement = FindElement(By.Id("acceptDropContainer"));
 
-            IWebElement ParentElement = driver.FindElement(By.Id("acceptDropContainer"));
+            IWebElement AcceptDrop = FindElement(By.Id("acceptable"));
 
-            IWebElement AcceptDrop = driver.FindElement(By.Id("acceptable"));
+            IWebElement DiscardDrop = FindElement(By.XPath("//div[@id='acceptDropContainer']//div[@id='notAcceptable']"));
 
-            IWebElement DiscardDrop = driver.FindElement(By.XPath("//div[@id='acceptDropContainer']//div[@id='notAcceptable']"));
-
-            IWebElement DroppableBox = driver.FindElement(By.XPath("//div[@id='acceptDropContainer']//div[@id='droppable']"));
+            IWebElement DroppableBox = FindElement(By.XPath("//div[@id='acceptDropContainer']//div[@id='droppable']"));
 
             // Drop Acceptable
-            action.MoveToElement(AcceptDrop)
-                .ClickAndHold()
-                .MoveToElement(DroppableBox)
-                .MoveToElement(ParentElement)
-                .Release()
-                .Build()
-                .Perform();
+            actionProvider.MoveToElement(AcceptDrop)
+                          .ClickAndHold()
+                          .MoveToElement(DroppableBox)
+                          .MoveToElement(ParentElement)
+                          .Release()
+                          .Build()
+                          .Perform();
 
             // Drop Not Acceptavle
-            action.MoveToElement(DiscardDrop)
-                .ClickAndHold()
-                .MoveToElement(DroppableBox)
-                .Release()
-                .Build().
-                Perform();
+            actionProvider.MoveToElement(DiscardDrop)
+                          .ClickAndHold()
+                          .MoveToElement(DroppableBox)
+                          .Release()
+                          .Build()
+                          .Perform();
         }
 
-        static void PreventPropogation(IWebDriver driver, Actions action)
+        public void PreventPropogation()
         {
-            IWebElement ClickPropogationTab = driver.FindElement(By.Id("droppableExample-tab-preventPropogation"));
-            ClickPropogationTab.Click();
+            SimpleClick(By.Id("droppableExample-tab-preventPropogation"));
 
-            action.MoveToElement(driver.FindElement(By.Id("dragBox")))
-                .ClickAndHold()
-                .MoveToElement(driver.FindElement(By.Id("notGreedyInnerDropBox")))
-                .Release()
-                .Build()
-                .Perform();
+            actionProvider.MoveToElement(FindElement(By.Id("dragBox")))
+                          .ClickAndHold()
+                          .MoveToElement(FindElement(By.Id("notGreedyInnerDropBox")))
+                          .Release()
+                          .Build()
+                          .Perform();
 
-            action.MoveToElement(driver.FindElement(By.Id("dragBox")))
-                .ClickAndHold()
-                .MoveToElement(driver.FindElement(By.Id("greedyDropBox")))
-                .Release()
-                .ClickAndHold()
-                .MoveToElement(driver.FindElement(By.Id("greedyDropBoxInner")))
-                .Release()
-                .Build()
-                .Perform();
+            actionProvider.MoveToElement(FindElement(By.Id("dragBox")))
+                          .ClickAndHold()
+                          .MoveToElement(FindElement(By.Id("greedyDropBox")))
+                          .Release()
+                          .ClickAndHold()
+                          .MoveToElement(FindElement(By.Id("greedyDropBoxInner")))
+                          .Release()
+                          .Build()
+                          .Perform();
         }
 
-        static void SwitchToRevert(IWebDriver driver, Actions action)
+        public void SwitchToRevert()
         {
-            IWebElement ClickRevertTab = driver.FindElement(By.Id("droppableExample-tab-revertable"));
-            ClickRevertTab.Click();
+            SimpleClick(By.Id("droppableExample-tab-revertable"));
 
-            IWebElement RevertBox = driver.FindElement(By.Id("revertable"));
+            IWebElement RevertBox = FindElement(By.Id("revertable"));
 
-            IWebElement NotRevertBox = driver.FindElement(By.Id("notRevertable"));
+            IWebElement NotRevertBox = FindElement(By.Id("notRevertable"));
 
-            IWebElement DroppableBox = driver.FindElement(By.XPath("//div[@class='revertable-drop-container']//div[@id='droppable']"));
+            IWebElement DroppableBox = FindElement(By.XPath("//div[@class='revertable-drop-container']//div[@id='droppable']"));
 
-            action.MoveToElement(RevertBox)
-                .ClickAndHold()
-                .MoveToElement(DroppableBox)
-                .Release()
-                .Build()
-                .Perform();
+            actionProvider.MoveToElement(RevertBox)
+                          .ClickAndHold()
+                          .MoveToElement(DroppableBox)
+                          .Release()
+                          .Build()
+                          .Perform();
 
-            action.MoveToElement(NotRevertBox)
-                .ClickAndHold()
-                .MoveToElement(DroppableBox)
-                .Release()
-                .Build()
-                .Perform();
+            actionProvider.MoveToElement(NotRevertBox)
+                          .ClickAndHold()
+                          .MoveToElement(DroppableBox)
+                          .Release()
+                          .Build()
+                          .Perform();
         }
     }
 }
