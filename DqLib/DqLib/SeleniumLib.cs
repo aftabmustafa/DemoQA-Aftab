@@ -27,9 +27,9 @@ namespace DqLib
             Driver.Navigate().GoToUrl(url);
         }
 
-        public void FindElement(By by)
+        public IWebElement FindElement(By by)
         {
-            Driver.FindElement(by);
+            return Driver.FindElement(by);
         }
 
         public ReadOnlyCollection<IWebElement> FindElements(By by)
