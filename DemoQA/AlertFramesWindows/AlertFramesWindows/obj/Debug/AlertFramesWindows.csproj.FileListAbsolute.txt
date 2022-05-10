@@ -1,0 +1,25 @@
+D:\Learning\Selenium\Submission\ToolsQA Submission-Aftab-Mustafa(Class Approach)\AlertFramesWindows\AlertFramesWindows\bin\Debug\AlertFramesWindows.exe.config
+D:\Learning\Selenium\Submission\ToolsQA Submission-Aftab-Mustafa(Class Approach)\AlertFramesWindows\AlertFramesWindows\bin\Debug\AlertFramesWindows.exe
+D:\Learning\Selenium\Submission\ToolsQA Submission-Aftab-Mustafa(Class Approach)\AlertFramesWindows\AlertFramesWindows\bin\Debug\AlertFramesWindows.pdb
+D:\Learning\Selenium\Submission\ToolsQA Submission-Aftab-Mustafa(Class Approach)\AlertFramesWindows\AlertFramesWindows\bin\Debug\nunit.framework.dll
+D:\Learning\Selenium\Submission\ToolsQA Submission-Aftab-Mustafa(Class Approach)\AlertFramesWindows\AlertFramesWindows\bin\Debug\WebDriver.dll
+D:\Learning\Selenium\Submission\ToolsQA Submission-Aftab-Mustafa(Class Approach)\AlertFramesWindows\AlertFramesWindows\bin\Debug\nunit.framework.xml
+D:\Learning\Selenium\Submission\ToolsQA Submission-Aftab-Mustafa(Class Approach)\AlertFramesWindows\AlertFramesWindows\obj\Debug\AlertFramesWindows.csproj.AssemblyReference.cache
+D:\Learning\Selenium\Submission\ToolsQA Submission-Aftab-Mustafa(Class Approach)\AlertFramesWindows\AlertFramesWindows\obj\Debug\AlertFramesWindows.csproj.CoreCompileInputs.cache
+D:\Learning\Selenium\Submission\ToolsQA Submission-Aftab-Mustafa(Class Approach)\AlertFramesWindows\AlertFramesWindows\obj\Debug\AlertFramesWindows.csproj.CopyComplete
+D:\Learning\Selenium\Submission\ToolsQA Submission-Aftab-Mustafa(Class Approach)\AlertFramesWindows\AlertFramesWindows\obj\Debug\AlertFramesWindows.exe
+D:\Learning\Selenium\Submission\ToolsQA Submission-Aftab-Mustafa(Class Approach)\AlertFramesWindows\AlertFramesWindows\obj\Debug\AlertFramesWindows.pdb
+D:\Learning\Selenium\Submission\ToolsQA Submission-Aftab-Mustafa\AlertFramesWindows\AlertFramesWindows\bin\Debug\AlertFramesWindows.exe.config
+D:\Learning\Selenium\Submission\ToolsQA Submission-Aftab-Mustafa\AlertFramesWindows\AlertFramesWindows\bin\Debug\AlertFramesWindows.exe
+D:\Learning\Selenium\Submission\ToolsQA Submission-Aftab-Mustafa\AlertFramesWindows\AlertFramesWindows\bin\Debug\AlertFramesWindows.pdb
+D:\Learning\Selenium\Submission\ToolsQA Submission-Aftab-Mustafa\AlertFramesWindows\AlertFramesWindows\bin\Debug\DqLib.dll
+D:\Learning\Selenium\Submission\ToolsQA Submission-Aftab-Mustafa\AlertFramesWindows\AlertFramesWindows\bin\Debug\nunit.framework.dll
+D:\Learning\Selenium\Submission\ToolsQA Submission-Aftab-Mustafa\AlertFramesWindows\AlertFramesWindows\bin\Debug\WebDriver.dll
+D:\Learning\Selenium\Submission\ToolsQA Submission-Aftab-Mustafa\AlertFramesWindows\AlertFramesWindows\bin\Debug\DqLib.pdb
+D:\Learning\Selenium\Submission\ToolsQA Submission-Aftab-Mustafa\AlertFramesWindows\AlertFramesWindows\bin\Debug\nunit.framework.xml
+D:\Learning\Selenium\Submission\ToolsQA Submission-Aftab-Mustafa\AlertFramesWindows\AlertFramesWindows\obj\Debug\AlertFramesWindows.csproj.AssemblyReference.cache
+D:\Learning\Selenium\Submission\ToolsQA Submission-Aftab-Mustafa\AlertFramesWindows\AlertFramesWindows\obj\Debug\AlertFramesWindows.csproj.SuggestedBindingRedirects.cache
+D:\Learning\Selenium\Submission\ToolsQA Submission-Aftab-Mustafa\AlertFramesWindows\AlertFramesWindows\obj\Debug\AlertFramesWindows.csproj.CoreCompileInputs.cache
+D:\Learning\Selenium\Submission\ToolsQA Submission-Aftab-Mustafa\AlertFramesWindows\AlertFramesWindows\obj\Debug\AlertFramesWindows.csproj.CopyComplete
+D:\Learning\Selenium\Submission\ToolsQA Submission-Aftab-Mustafa\AlertFramesWindows\AlertFramesWindows\obj\Debug\AlertFramesWindows.exe
+D:\Learning\Selenium\Submission\ToolsQA Submission-Aftab-Mustafa\AlertFramesWindows\AlertFramesWindows\obj\Debug\AlertFramesWindows.pdb
