@@ -10,3 +10,15 @@ D:\Learning\Selenium\Submission\ToolsQA Submission-Aftab-Mustafa\Test Case\Autom
 D:\Learning\Selenium\Submission\ToolsQA Submission-Aftab-Mustafa\Test Case\AutomationPractice\1.RegistrationAndLogin\obj\Debug\1.RegistrationAndLogin.csproj.CopyComplete
 D:\Learning\Selenium\Submission\ToolsQA Submission-Aftab-Mustafa\Test Case\AutomationPractice\1.RegistrationAndLogin\obj\Debug\1.RegistrationAndLogin.exe
 D:\Learning\Selenium\Submission\ToolsQA Submission-Aftab-Mustafa\Test Case\AutomationPractice\1.RegistrationAndLogin\obj\Debug\1.RegistrationAndLogin.pdb
+D:\Learning\Selenium\Submission\Test-WebApp\Test Case\AutomationPractice\1.RegistrationAndLogin\bin\Debug\1.RegistrationAndLogin.exe.config
+D:\Learning\Selenium\Submission\Test-WebApp\Test Case\AutomationPractice\1.RegistrationAndLogin\bin\Debug\1.RegistrationAndLogin.exe
+D:\Learning\Selenium\Submission\Test-WebApp\Test Case\AutomationPractice\1.RegistrationAndLogin\bin\Debug\1.RegistrationAndLogin.pdb
+D:\Learning\Selenium\Submission\Test-WebApp\Test Case\AutomationPractice\1.RegistrationAndLogin\bin\Debug\DqLib.dll
+D:\Learning\Selenium\Submission\Test-WebApp\Test Case\AutomationPractice\1.RegistrationAndLogin\bin\Debug\WebDriver.dll
+D:\Learning\Selenium\Submission\Test-WebApp\Test Case\AutomationPractice\1.RegistrationAndLogin\bin\Debug\DqLib.pdb
+D:\Learning\Selenium\Submission\Test-WebApp\Test Case\AutomationPractice\1.RegistrationAndLogin\obj\Debug\1.RegistrationAndLogin.csproj.AssemblyReference.cache
+D:\Learning\Selenium\Submission\Test-WebApp\Test Case\AutomationPractice\1.RegistrationAndLogin\obj\Debug\1.RegistrationAndLogin.csproj.SuggestedBindingRedirects.cache
+D:\Learning\Selenium\Submission\Test-WebApp\Test Case\AutomationPractice\1.RegistrationAndLogin\obj\Debug\1.RegistrationAndLogin.csproj.CoreCompileInputs.cache
+D:\Learning\Selenium\Submission\Test-WebApp\Test Case\AutomationPractice\1.RegistrationAndLogin\obj\Debug\1.RegistrationAndLogin.csproj.CopyComplete
+D:\Learning\Selenium\Submission\Test-WebApp\Test Case\AutomationPractice\1.RegistrationAndLogin\obj\Debug\1.RegistrationAndLogin.exe
+D:\Learning\Selenium\Submission\Test-WebApp\Test Case\AutomationPractice\1.RegistrationAndLogin\obj\Debug\1.RegistrationAndLogin.pdb
