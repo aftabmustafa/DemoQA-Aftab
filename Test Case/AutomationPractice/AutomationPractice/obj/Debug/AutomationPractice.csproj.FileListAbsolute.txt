@@ -1,8 +1,0 @@
-D:\Learning\Selenium\Submission\ToolsQA Submission-Aftab-Mustafa\Test Case\AutomationPractice\AutomationPractice\bin\Debug\AutomationPractice.exe.config
-D:\Learning\Selenium\Submission\ToolsQA Submission-Aftab-Mustafa\Test Case\AutomationPractice\AutomationPractice\bin\Debug\AutomationPractice.exe
-D:\Learning\Selenium\Submission\ToolsQA Submission-Aftab-Mustafa\Test Case\AutomationPractice\AutomationPractice\bin\Debug\AutomationPractice.pdb
-D:\Learning\Selenium\Submission\ToolsQA Submission-Aftab-Mustafa\Test Case\AutomationPractice\AutomationPractice\obj\Debug\AutomationPractice.csproj.AssemblyReference.cache
-D:\Learning\Selenium\Submission\ToolsQA Submission-Aftab-Mustafa\Test Case\AutomationPractice\AutomationPractice\obj\Debug\AutomationPractice.csproj.SuggestedBindingRedirects.cache
-D:\Learning\Selenium\Submission\ToolsQA Submission-Aftab-Mustafa\Test Case\AutomationPractice\AutomationPractice\obj\Debug\AutomationPractice.csproj.CoreCompileInputs.cache
-D:\Learning\Selenium\Submission\ToolsQA Submission-Aftab-Mustafa\Test Case\AutomationPractice\AutomationPractice\obj\Debug\AutomationPractice.exe
-D:\Learning\Selenium\Submission\ToolsQA Submission-Aftab-Mustafa\Test Case\AutomationPractice\AutomationPractice\obj\Debug\AutomationPractice.pdb

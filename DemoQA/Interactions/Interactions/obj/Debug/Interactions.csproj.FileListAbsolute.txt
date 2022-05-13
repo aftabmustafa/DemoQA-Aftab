@@ -1,9 +1,0 @@
-D:\Learning\Selenium\Submission\ToolsQA Submission-Aftab-Mustafa(Class Approach)\Interactions\Interactions\bin\Debug\Interactions.exe.config
-D:\Learning\Selenium\Submission\ToolsQA Submission-Aftab-Mustafa(Class Approach)\Interactions\Interactions\bin\Debug\Interactions.exe
-D:\Learning\Selenium\Submission\ToolsQA Submission-Aftab-Mustafa(Class Approach)\Interactions\Interactions\bin\Debug\Interactions.pdb
-D:\Learning\Selenium\Submission\ToolsQA Submission-Aftab-Mustafa(Class Approach)\Interactions\Interactions\obj\Debug\Interactions.csproj.AssemblyReference.cache
-D:\Learning\Selenium\Submission\ToolsQA Submission-Aftab-Mustafa(Class Approach)\Interactions\Interactions\obj\Debug\Interactions.csproj.CoreCompileInputs.cache
-D:\Learning\Selenium\Submission\ToolsQA Submission-Aftab-Mustafa(Class Approach)\Interactions\Interactions\obj\Debug\Interactions.exe
-D:\Learning\Selenium\Submission\ToolsQA Submission-Aftab-Mustafa(Class Approach)\Interactions\Interactions\obj\Debug\Interactions.pdb
-D:\Learning\Selenium\Submission\ToolsQA Submission-Aftab-Mustafa(Class Approach)\Interactions\Interactions\bin\Debug\WebDriver.dll
-D:\Learning\Selenium\Submission\ToolsQA Submission-Aftab-Mustafa(Class Approach)\Interactions\Interactions\obj\Debug\Interactions.csproj.CopyComplete
